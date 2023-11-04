@@ -22,7 +22,7 @@ function loginInfo(req, res, next) {
     email = req.body["email"];
     password = req.body["password"];  
 
-    if(email == "mezooo2001@hotmail.com" && password == "Incmike2001") {
+    if(email == "email@hotmail.com" && password == "password123") {
         loginValid = true;
         loggedIn = true;
     }
