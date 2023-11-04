@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Log In</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="/Images/logo.png" type="image/png">
+
+        <style>
+            @font-face {
+                font-family: 'Font1';
+                src: url('/Babapro-Ea4rr.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            body {
+                background-color: black;
+                margin: 0;
+            }
+
+            .logInIMG {
+                width:840px;
+                float:right;
+                margin-right:30px;
+            }
+
+            .logWindow {
+                float:left;
+                width:400px;
+                height:480px;
+                background-color: #d2d2d2;
+                margin-left:90px;
+                margin-top:160px;
+                border-radius:40px;
+                text-align: left;
+            }
+
+            .logo {
+                width:200px;
+                position: absolute;
+                margin:20px;
+            }
+
+            .logForm {
+                margin-left:62px;
+            }
+
+            .textBox {
+                height:40px;
+                width:264px;
+                background-color: #282828;
+                border-width: 0px;
+                border-radius:5px;
+                color:white;
+                position: absolute;
+                font-size:13px;
+                padding-left: 10px;
+            }
+
+            label {
+                font-size:16px;
+                font-family: Work Sans;
+            }
+
+            ::placeholder {
+                font-family: Work Sans;
+                font-weight: bold;
+            }
+
+            .logBorderEmail {
+                height:50px;
+                width:283px;
+                border-width:2px;
+                border-style: solid;
+                border-color:tomato;
+                border-radius: 7px;
+                position: absolute;
+                margin-top:-6px;
+                margin-left:-6px;
+                transition: border-width 0.5s;
+                opacity: 0;
+            }
+
+            .logBorderPassword {
+                height:50px;
+                width:283px;
+                border-width:2px;
+                border-style: solid;
+                border-color:tomato;
+                border-radius: 7px;
+                position: absolute;
+                margin-top:64px;
+                margin-left:-6px;
+                transition: border-width 0.5s;
+                opacity: 0;
+            }
+
+            .submitButton {
+                position: absolute;
+                background-color: tomato;
+                margin-top:130px;
+            }
+
+            .submitButton {
+                padding: 15px 25px 15px 25px;
+                background-color: #FF4A39;
+                border-width:0px;
+                border-radius:10px;
+                font-size:20px;
+                color:white;
+                font-weight:bolder;
+                font-family: Work Sans;
+                letter-spacing: 3px;
+                position: absolute;
+                z-index: 1;
+                transition: background-color 0.3s;
+            }
+
+            .buttonBorder {
+                width:136px;
+                height:43px;
+                position: absolute;
+                margin-top:133.5px;
+                margin-left:3.5px;
+                border-width:2px;
+                border-color:#feb4ae;
+                border-style:solid;
+                border-radius:8px;
+                z-index: 2;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            /* .buttonContainer:hover .submitButton{
+                background-color: #da3d2f;
+            } */
+
+            .buttonContainer:hover .buttonBorder{
+                opacity:1;
+            }
+
+            .buttonContainer {
+                margin-left:64px;
+                position: absolute;
+                margin-top:20px;
+            }
+
+            .buttonPressed {
+                background-color: #bb362a;
+            }
+
+            .showButton {
+                position: absolute;
+                color:#FF4A39;
+                font-family: Work Sans;
+                font-weight:bolder;
+                font-size:14px;
+                margin-left:285px;
+                margin-top:83px;
+                transition: color 0.3s;
+                cursor:pointer;
+            }
+
+            .showButton:hover {
+                color:white;
+            }
+
+            .incorrectContainer {
+                position: absolute;
+                background-color: #feb4ae;
+                width:264px;
+                height:50px;
+                font-family: Work Sans;
+                padding-left: 10px;
+                border-radius: 5px;
+                font-size:14px;
+                margin-top:-20px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <img src="../Images/logInBG.png" class="logInIMG">
+
+        <a href="index.html" style="position: absolute;">
+            <img src="../Images/logo2.png" class="logo"> 
+        </a>
+
+        <div class="logWindow">
+            <div style="font-size:32px; font-family: Font1; font-weight:bolder; margin-top:45px; word-spacing: 10px; text-align: center; margin-bottom:40px;">
+                SIGN IN
+            </div>
+            <% if(locals.incorrect) { %>
+            <form action="/login" method="POST" class="logForm">
+                <div class="incorrectContainer"><%= incorrect %></div>
+                <div class="logBorderEmail" style="margin-top: 44px;"> </div>
+                <input type="text" name="email" class="textBox" placeholder="EMAIL" required style="margin-top:50px; margin-bottom:35px;" onclick="borderStartEmail()">
+                <div class="logBorderPassword" style="margin-top: 114px;"> </div>
+                <input type="password" name="password" placeholder="PASSWORD" class="textBox passwordBox" required style="margin-top:120px; margin-bottom: 20px;" onclick="borderStartPassword()">
+                <div class="buttonContainer" onclick="buttonAnimation()" >
+                    <input type="submit" value="SIGN IN" class="submitButton" style="margin-top: 180px;">
+                    <div class="buttonBorder" style="margin-top:183.5px;"></div>
+                </div>
+            </form>
+            <div class="showButton" style="margin-top:133px;" onclick="showToggle()">SHOW</div>
+            <%} else {%>
+        
+                <form action="/login" method="POST" class="logForm">
+                    <div class="logBorderEmail"> </div>
+                    <input type="text" name="email" class="textBox" placeholder="EMAIL" required style="margin-bottom:35px;" onclick="borderStartEmail()">
+                    <div class="logBorderPassword"> </div>
+                    <input type="password" name="password" placeholder="PASSWORD" class="textBox passwordBox" required style="margin-top:70px; margin-bottom: 20px;" onclick="borderStartPassword()">
+                    <div class="buttonContainer" onclick="buttonAnimation()">
+                        <input type="submit" value="SIGN IN" class="submitButton">
+                        <div class="buttonBorder"></div>
+                    </div>
+                </form>
+                <div class="showButton" onclick="showToggle()">SHOW</div>
+            <%}%>
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            function borderStartEmail() {
+                $('.logBorderEmail').css('opacity','1');
+                $('.logBorderPassword').css('opacity','0');
+            }
+
+            function borderStartPassword() {
+                $('.logBorderEmail').css('opacity','0');
+                $('.logBorderPassword').css('opacity','1');
+            }
+
+            function buttonAnimation() {
+                $('.submitButton').addClass("buttonPressed");
+                setTimeout(()=> {
+                    $('.submitButton').removeClass("buttonPressed");
+                }
+                ,150);
+            }
+
+            function showToggle() {
+                if($('.passwordBox').attr('type') == "password") {
+                    $('.passwordBox').attr('type','text');
+                }
+                else {
+                    $('.passwordBox').attr('type','password');
+                }
+                
+            }
+        </script>
+    </body>
+</html>

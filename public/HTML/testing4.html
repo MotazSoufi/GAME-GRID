@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TESTING 4</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Meroitic&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+        body {
+            margin:0;
+            background-color: #d2d2d2;
+        }
+
+        .franchiseCollection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top:100px;
+            gap:70px;
+            width:100%;
+        }
+
+        .franchiseCard {
+            background-color: #0D0D0D;
+            height:400px;
+            width:270px;
+            border-radius: 20px;
+            margin-top:10px;
+        }
+
+        .edward {
+            position: absolute;
+            width:310px;
+            margin-top:-30px;
+            margin-left: -20px;
+            transition: margin-top 0.4s;
+        }
+
+        .cloud {
+            position: absolute;
+            width:220px;
+            margin-top:-40px;
+            margin-left: 30px;
+            transition: margin-top 0.4s;
+        }
+
+        .dante {
+            position: absolute;
+            width:300px;
+            margin-top:-40px;
+            margin-left: -30px;
+            transition: margin-top 0.4s;
+        }
+
+        .masterC {
+            position: absolute;
+            width:320px;
+            margin-top:-40px;
+            margin-left: -30px;
+            transition: margin-top 0.4s;
+        }
+
+        .nfsCar {
+            position: absolute;
+            width:380px;
+            margin-top:73px;
+            margin-left: -50px;
+            transition: margin-top 0.4s;
+        }
+
+        .subZero {
+            position: absolute;
+            width:320px;
+            margin-top:-30px;
+            margin-left: -25px;
+            transition: margin-top 0.4s;
+        }
+
+        .gradientF {
+            position: absolute;
+            width:270px;
+            margin-top:34px;
+        }
+
+        .franchiseLogo {
+            position: absolute;
+            width:230px;
+            margin-top:300px;
+            margin-left: 19px;
+            transform: scale(1);
+            transition: transform 0.3s;
+        }
+
+        .whiteBlock1 {
+            position: absolute;
+            width:270px;
+            height:40px;
+            background-color: #d2d2d2;
+            z-index: -1;
+            margin-top: -7px;
+            margin-left: 0px;
+            transition:width 0.5s;
+        }
+
+        .franchiseCard:hover .whiteBlock1{
+            width:0px;
+        }
+
+        .whiteBlock2 {
+            position: absolute;
+            width:11px;
+            height:410px;
+            background-color: #d2d2d2;
+            z-index: -1;
+            margin-top: -8px;
+            margin-left: 270px;
+            transition: height 0.5s;
+        }
+
+    
+        .franchiseCard:hover .whiteBlock2{
+            height:0px;
+        }
+
+        .whiteBlock3 {
+            position: absolute;
+            width:11px;
+            height:410px;
+            background-color: #d2d2d2;
+            z-index: -1;
+            margin-top: -8px;
+            margin-left: -11px;
+            transform: scaleY(1);
+            transform-origin: bottom;
+            transition: transform 0.5s;
+        }
+
+        .franchiseCard:hover .whiteBlock3{
+            transform: scaleY(0);
+        }
+
+        .whiteBlock4 {
+            position: absolute;
+            width:270px;
+            height:20px;
+            background-color: #d2d2d2;
+            z-index: -1;
+            margin-top: 386px;
+            margin-left: 0px;
+            transform: scaleX(1);
+            transform-origin: right;
+            transition: transform 0.5s;
+        }
+
+        .franchiseCard:hover .whiteBlock4{
+            transform: scaleX(0);
+        }
+
+
+        .borderAnimation {
+            position: absolute;
+            height:404px;
+            width:274px;
+            margin-left:-6px;
+            margin-top:-6px;
+            border-radius: 22px;
+            border-width: 4px;
+            border-color:tomato;
+            border-style: solid;  
+            z-index: -2;
+        }
+
+
+
+        .franchiseCard:hover .edward{
+            margin-top:-60px;
+        }
+
+        .franchiseCard:hover .cloud{
+            margin-top:-60px;
+        }
+
+        .franchiseCard:hover .dante{
+            margin-top:-60px;
+        }
+
+        .franchiseCard:hover .masterC{
+            margin-top:-60px;
+        }
+
+        .franchiseCard:hover .nfsCar{
+            margin-top:50px;
+        }
+
+        .franchiseCard:hover .subZero{
+            margin-top:-50px;
+        }
+
+        .franchiseCard:hover .franchiseLogo{
+            transform: scale(1.1);
+        }
+    </style>
+
+    <body>
+        <div class="franchiseCollection">
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/edward.png" class="edward">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/assassin.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/cloudStrife.png" class="cloud">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/ff7Logo.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/dante.png" class="dante">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/dmcLogo.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/masterch.png" class="masterC">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/haloLogo.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/mario.png" class="masterC">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/marioLogo.png" class="franchiseLogo" style="margin-top: 250px;">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/nfsCar.png" class="nfsCar">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/nfsLogo.png" class="franchiseLogo" style="margin-top:290px;">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/subZero.png" class="subZero">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/mkLogo.png" class="franchiseLogo" style="margin-top:320px;">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="Images/tombRaider.png" class="subZero">
+                <img src="Images/gradientF.png" class="gradientF">
+                <img src="Images/tombRaiderLogo.png" class="franchiseLogo" style="margin-top:320px;">
+            </div>
+ 
+        </div>
+    </body>
+</html>

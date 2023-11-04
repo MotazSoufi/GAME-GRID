@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Browse Games</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="../Images/logo.png" type="image/png">
+        <link rel="stylesheet" href="../CSS/browse.css">
+    </head>
+
+    <body>
+
+        <a href="index.html">
+            <img class="logo" src="../Images/logo2.png">
+        </a>
+
+        <nav>
+            <ul class="navigation" id="navigationBar" data-visible="false">
+                
+        
+                    <li><a href="browse.html" class="underline">BROWSE</a></li>
+                    <span class="dropdown">
+                        <img src="../Images/arrow.png" width="18" class="arrow">
+                        <div class="dropdownContent">
+                            <div class="options">
+                                <div class="column">
+                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Platform</h6>
+                                    <a href="#">PlayStation</a>
+                                    <a href="#">Xbox</a>
+                                    <a href="#">Nintendo</a>
+                                </div>
+                            
+                                <div class="column">
+                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Genre</h6>
+                                    <a href="#">Action</a>
+                                    <a href="#">RPG</a>
+                                    <a href="#">Puzzle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+   
+                </li>
+                <li><a href="feed.html" class="underline">FEED</a></li>
+                <li><a href="lists.html" class="underline">MY LISTS</a></li>
+                <li><a href="profile.html" class="underline">PROFILE</a></li>
+            </ul>
+        </nav>
+
+        <button onclick="toggleMenu()" class="menuToggle" id="menuToggle" menuIcon="false"> 
+        </button>
+
+
+        <!-- ================================================================ -->
+        
+        <div class="gameBackground"></div>
+
+        
+
+        <div class="gameSelectContainer" id="gameContainer">
+            <img src="../Images/transparentIMG.png" height="200" style="padding-top:298px;">
+            <img src="../Images/spidermanSQUARE.jpg" class="p3">
+            <img src="../Images/ff16SQUARE.png" class="p4">
+            <img src="../Images/re4SQUARE.webp" class="p5">
+            <img src="../Images/hogwartsSQUARE.png" class="p1">
+            <img src="../Images/diabloSQUARE.png" class="p2">
+            <img src="../Images/transparentIMG.png" height="200" style="padding-bottom:298px;">
+        </div>
+
+        <img src="../Images/gradientTop.png" style="position: absolute; width:300px; left:30px; top:228px;">
+        <img src="../Images/gradientbottom.png" style="position: absolute; width:300px; top:705px; left:30px;">
+
+        <img src="../Images/arrowUp.png" class="upArrow" onclick="movetheting()">
+        <img src="../Images/arrow.png" class="downArrow" onclick="moveDown()">
+
+        <img src="../Images/spidermanLogo.png" class="spidermanLogo">
+        <img src="../Images/ffLogo.webp" class="ffLogo">
+        <img src="../Images/re4Logo.png" class="reLogo">
+        <img src="../Images/hogwartsLogo.webp" class="hogwartsLogo">
+        <img src="../Images/diabloLogo.png" class="diabloLogo">
+
+        <img src="../Images/black.png" style="position: absolute; width:260px; height:110px;">
+
+        <div class="title1"><span style="color: #FF4A39; font-weight: bold;">2023</span> RELEASES</div>
+        <table height="790">
+
+        </table>
+
+
+        <div style="background-color: #d2d2d2; height:560px;">
+            <div style="background-color:black; width:100%; height:120px; margin-bottom: 20px; margin-left: auto; margin-right: auto;">
+            </div>
+            
+    
+            <div class="chooseConsole">
+                <div class="playstation" onclick="selectPlaystation()" title="PlayStation Games">
+                </div>
+    
+                <div class="xbox" onclick="selectXbox()" title="Xbox Games">
+                </div>
+
+                <div class="nintendo" onclick="selectNintendo()" title="Nintendo Games">
+                </div>
+            </div>
+    
+            <div class="consoleExTitle">
+                <span style="color:#FF4A39">CONSOLE</span> EXCLUSIVES
+            </div>
+    
+            
+            <div class="playstationExclusives">
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p5.png">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Horizon: Forbidden West</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                RPG, Action
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                February 18, 2022
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5, PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Guerrilla Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/spidermanSQUARE.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Spider-man 2</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                October 20, 2023
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Insomniac Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p9.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Sackboy: A Big Adventure</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Platformer
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                19 November 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5, PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Sumo Digital
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p7.webp">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Ratchet & Clank Rift Apart</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Platform, Shooter
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                June 11, 2021
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Insomniac Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+    
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p8.webp">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Returnal</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Rogue-like, Shooter
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                April 30, 2021
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Housemarque
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p10.webp">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Demon's Souls</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Role-playing
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                November 19, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Bluepoint Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p11.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Ghost of Tsushima</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                July 17, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5, PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Sucker Punch Productions
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p12.png">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">The Last of Us Part II</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                June 19, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Naughty Dog
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+                
+            </div>
+
+
+
+            <!-- =============================================================== -->
+
+            <div class="xboxExclusives">
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/forza.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Forza Horizon 5</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Racing
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                9 November 2021
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox One, Xbox Series X/S
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Playground Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/halo.png">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Halo Infinite</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Shooter, First-person
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                December 8, 2021
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox One, Xbox Series X/S
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                343 Industries
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/sunset.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Sunset Overdrive</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Shooter
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                October 28, 2014
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox One
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Insomniac Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/sea.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Sea of Thieves</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Multiplayer, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                20 March 2018
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox One, Xbox Series X/S
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Rare Limited
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+    
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/starfield.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Starfield</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, RPG
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                September 6, 2023
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox Series X/S
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Bethesda Game Studios
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/gears.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Gears 5</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Third-person, Shooter
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                September 10, 2019
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox One, Xbox Series X/S
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                The Coalition
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/forzaM.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Forza Motorsport 5</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Racing
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                November 22, 2013
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Xbox One
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Turn 10 Studios
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/ori.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Ori and the Will of the Wisps</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Metroidvania, Platformer
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                March 11, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Windows, Xbox One, Nintendo Switch...
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Moon Studios
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+            </div>
+
+            <!-- ======================== NINTENDO ============================== -->
+
+
+            <div class="nintendoExclusives">
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/mario.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Super Mario Odyssey</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Platform, Action
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                October 27, 2017
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Nintendo EPD
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/zelda.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">The Legend of Zelda: Tears of the Kingdom</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                May 12, 2023
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Nintendo EPD
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/animalCorssing.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Animal Crossing: New Horizons</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Simulation
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                March 20, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Nintendo EPD
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/luigi.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Luigi's Mansion 3</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                October 31, 2019
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Next Level Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+    
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/kirby.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Kirby and the Forgotten Land</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Platform
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                March 25, 2022
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                HAL Laboratory
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/smash.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Super Smash Bros. Ultimate</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Fighting
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                December 7, 2018
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Bandai Namco Studios
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/kart.jpg">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Mario Kart 8</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Kart Racing
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                May 29, 2014
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch, Wii U
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Nintendo EAD
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/bayonetta.png">
+                        <img src="../Images/gradientBottom.png" class="gradient">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Bayonetta 3</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Hack and Slash, Action
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                October 28, 2022
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                Nintendo Switch
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                PlatinumGames
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <table style="position: absolute; background-color: #d2d2d2; height:1100px; width:100%; z-index: -33;">
+
+        </table>
+
+        <div class="franchiseCollection">
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/edward.png" class="edward">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/assassin.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/cloudStrife.png" class="cloud">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/ff7Logo.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/dante.png" class="dante">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/dmcLogo.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/masterch.png" class="masterC">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/haloLogo.png" class="franchiseLogo">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/mario.png" class="masterC">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/marioLogo.png" class="franchiseLogo" style="margin-top: 250px;">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/nfsCar.png" class="nfsCar">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/nfsLogo.png" class="franchiseLogo" style="margin-top:290px;">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/subZero.png" class="subZero">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/mkLogo.png" class="franchiseLogo" style="margin-top:320px;">
+            </div>
+
+            <div class="franchiseCard">
+                <div class="borderAnimation"></div>
+                <div class="whiteBlock1"></div>
+                <div class="whiteBlock2"></div>
+                <div class="whiteBlock3"></div>
+                <div class="whiteBlock4"></div>
+                <img src="../Images/tombRaider.png" class="subZero">
+                <img src="../Images/gradientF.png" class="gradientF">
+                <img src="../Images/tombRaiderLogo.png" class="franchiseLogo" style="margin-top:320px;">
+            </div>
+ 
+        </div>
+
+
+
+        <table class="shadow" shadowToggle="false"></table>
+
+        </table>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="../JavaScript/browse.js"></script>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TESTING</title> 
+        <style>
+
+            @font-face {
+                font-family: 'MyFont';
+                src: url('Babapro-Ea4rr.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 200px);
+                grid-template-rows: repeat(6, 250px);
+                gap: 20px;
+            }
+
+            .card {
+                width: 200px;
+                text-align: center;
+            }
+
+            .card img {
+                width: 100%;
+                border-radius: 15px;
+                box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+            }
+
+            .card div {
+                margin-top: 10px;
+                font-family: MyFont;
+            }
+
+            .card:hover img {
+                transform: scale(1.1);
+                transition: transform 0.2s;
+            }
+
+            .searchBar {
+                border-radius: 20px;
+                height:25px;
+                width:23px;
+                transition: width 0.4s;
+                border: 2px solid #FF4A39;
+            }
+
+            .searchIcon {
+                width:30px;
+                position: absolute;
+                transition: left 0.4s;
+            }
+
+            .searchContainer {
+                display:flex;
+            }
+
+            .discoverTitle {
+                font-family: MyFont;
+                font-size: 60px;
+            }
+
+            .discoverWord {
+                font-weight: bold;
+                color: #FF4A39;
+                font-size: 88px;
+            }
+
+            .underline {
+                position: relative;
+                text-decoration: none;
+                color: #000; /* Set the desired text color */
+                font-size: 24px; /* Adjust as needed */
+                font-weight: bold; /* Adjust as needed */
+            }
+
+            .underline::before {
+                content: "";
+                position: absolute;
+                top:25px;
+                bottom: 50%;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                width: 0px;
+                height: 4px; /* Adjust the height of the underline */
+                background-color: #FF4A39; /* Set the desired underline color */
+                transition: width 0.3s ease; /* Animation transition property */
+            }
+
+            .underline:hover::before {
+                width: 100%;
+            }
+
+        </style>
+
+        <script>
+            function search() {
+                var searchIcon = document.getElementById("searchIcon");
+                var searchBar = document.getElementById("searchBar");
+
+                if(searchIcon.style.left == "8px") {
+                    searchIcon.style.left = "200px";
+                    searchBar.style.width = "216px";
+                }
+                else {
+                    //initiate search
+                }
+
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <img src="Images/p1.png">
+                <div>FINAL FANTASY VII</div>
+            </div>
+            <div class="card">
+                <img src="Images/p2.png">
+                <div>Red Dead Redemption II</div>
+            </div>
+            <div class="card">
+                <img src="Images/p3.png">
+                <div>Ghostrunner</div>
+            </div>
+            <div class="card">
+                <img src="Images/p4.png">
+                <div>Tales of Arise</div>
+            </div>
+            <div class="card">
+                <img src="Images/p5.png">
+                <div>Horzion Forbidden West</div>
+            </div>
+            <div class="card">
+                <img src="Images/p6.png">
+                <div>FINAL FANTASY XVI</div>
+            </div>
+            
+            
+        </div>
+
+        <div class="searchContainer">
+            <input type="text" placeholder="Search" class="searchBar" id="searchBar">
+
+            <img src="Images/searchIcon.png" class="searchIcon" onclick="search()" id="searchIcon" style="left:8px;">
+        </div>
+
+        <table height="200"></table>
+        <div style="border: 1px solid #FF4A39; width:62px; padding: 10px; ">
+            SIGN UP
+        </div>
+
+        <table height="200"></table>
+
+        <div>
+            <a class="underline">BROWSE</a>
+        </div>
+
+        <div style="transform: rotate(45deg);">></div>
+    </body>
+</html>

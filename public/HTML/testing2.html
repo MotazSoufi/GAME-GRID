@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    
+    <style>
+        .image-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-container img {
+            width: 150px;
+            transition: transform 0.3s, filter 0.3s;
+            filter: grayscale(100%);
+        }
+
+        .image-container img:hover {
+            z-index: 1;
+            transform: scale(1.35);
+            filter: grayscale(0%);
+        }
+
+        .image-container:nth-child(2) img {
+            margin-top: -30px; 
+        }
+
+        .image-container:nth-child(3) img {
+            margin-top: -30px; 
+        }
+
+        .image-container:nth-child(4) img {
+            margin-top: -30px; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="image-container">
+            <img src="Images/horzion.png">
+            <img src="Images/sackboy.png">
+            <img src="Images/hogwarts.png">
+        </div>
+        <div class="image-container" style="margin-left: 80px;">
+            <img src="Images/diablo.png">
+            <img src="Images/nfs.png">
+            <img src="Images/uncharted4.png">
+        </div>
+        <div class="image-container" style="margin-left: 160px;">
+            <img src="Images/cyberpunk.png">
+            <img src="Images/persona5.png">
+        </div>
+        <div class="image-container" style="margin-left: 240px;">
+            <img src="Images/zelda.png">
+            <img src="Images/cuphead.png">
+        </div>
+    </div>
+
+
+    <h1>HELLO</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="JavaScript/testing.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Log In</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Meroitic&display=swap" rel="stylesheet">
+
+        <style>
+            @font-face {
+                font-family: 'Font1';
+                src: url('../Babapro-Ea4rr.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            body {
+                background-color: black;
+                margin: 0;
+            }
+
+            .logInIMG {
+                width:530px;
+                float:right;
+                margin-right:30px;
+            }
+
+            .logWindow {
+                float:left;
+                width:400px;
+                height:480px;
+                background-color: #d2d2d2;
+                margin-left:90px;
+                margin-top:160px;
+                border-radius:20px;
+                text-align: left;
+            }
+
+            .logo {
+                width:200px;
+                position: absolute;
+                margin:20px;
+            }
+
+            .logForm {
+                margin-left:62px;
+            }
+
+            .textBox {
+                height:40px;
+                width:270px;
+                background-color: #282828;
+                border-width: 0px;
+                border-radius:5px;
+                color:white;
+                position: absolute;
+            }
+
+            label {
+                font-size:16px;
+                font-family: Noto Sans Meroitic;
+            }
+
+            ::placeholder {
+                font-family: Noto Sans Meroitic;
+                font-weight: bold;
+            }
+
+            .logBorderEmail {
+                height:50px;
+                width:283px;
+                border-width:2px;
+                border-style: solid;
+                border-color:tomato;
+                border-radius: 7px;
+                position: absolute;
+                margin-top:-6px;
+                margin-left:-6px;
+                transition: border-width 0.5s;
+                opacity: 0;
+            }
+
+            .logBorderPassword {
+                height:50px;
+                width:283px;
+                border-width:2px;
+                border-style: solid;
+                border-color:tomato;
+                border-radius: 7px;
+                position: absolute;
+                margin-top:64px;
+                margin-left:-6px;
+                transition: border-width 0.5s;
+                opacity: 0;
+            }
+
+            .submitButton {
+                position: absolute;
+                background-color: tomato;
+                margin-top:130px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <img src="../Images/logInIMG.png" class="logInIMG">
+
+        <a href="index.html" style="position: absolute;">
+            <img src="../Images/logo2.png" class="logo"> 
+        </a>
+
+        <div class="logWindow">
+            <div style="font-size:32px; font-family: Font1; font-weight:bolder; margin-top:45px; word-spacing: 10px; text-align: center; margin-bottom:40px;">
+                SIGN IN
+            </div>
+            <form action="/check" method="POST" class="logForm">
+                <div class="logBorderEmail"> </div>
+                <input type="text" name="email" class="textBox" placeholder="  EMAIL" required style="margin-bottom:35px;" onclick="borderStartEmail()">
+                <div class="logBorderPassword"> </div>
+                <input type="text" name="password" placeholder="  PASSWORD" class="textBox" required style="margin-top:70px;" onclick="borderStartPassword()">
+                <input type="submit" value="Submit" class="submitButton">
+            </form>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            function borderStartEmail() {
+                $('.logBorderEmail').css('opacity','1');
+                $('.logBorderPassword').css('opacity','0');
+            }
+
+            function borderStartPassword() {
+                $('.logBorderEmail').css('opacity','0');
+                $('.logBorderPassword').css('opacity','1');
+            }
+        </script>
+    </body>
+</html>

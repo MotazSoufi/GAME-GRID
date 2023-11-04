@@ -1,0 +1,155 @@
+
+
+.card {
+    background-color: black;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    position: relative;
+}
+
+.innerCard {
+    overflow: hidden;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.innerCard img {
+    width:180px;
+    position: absolute;
+}
+
+.gradient {
+    transform: rotate(270deg);
+    position: absolute;
+    right:115px;
+    height:180px;
+}
+
+.gameTitle {
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    font-size: 18px;
+    left: 190px;
+    top: 20px;
+    bottom: 0px;
+    transition: top 0.3s ease-out;
+    width:160px;
+}
+
+.gameContent {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    top:140px;
+    transition: top 0.3s ease-out;
+}
+
+.gameDes {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    width:160px;
+    top:190px;
+    transition: top 0.3s ease-out;
+}
+
+.card:hover .gameTitle {
+    top: -160px;
+}
+
+.card:hover .gameContent {
+    top: -90px;
+}
+
+.card:hover .gameDes {
+    top: 20px;
+}
+
+.borderAnim {
+    border-color: #FF4A39;
+    border-width: 0px;
+    border-style: solid;
+    position: absolute;
+    width: 361px;
+    height: 182px;
+    top:-3px;
+    left:-3px;
+    border-radius: 15px;
+    opacity:0;
+    transform-origin: center;
+    transform: scale(1);
+    transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+
+}
+
+.borderAnim:hover {
+    border-width: 3px;
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+@media (max-width: 599px) {
+    .card {
+      width: 170px;
+      height: 170px;
+      font-family: 'Noto Sans Meroitic', sans-serif;
+      color: white;
+      position: relative;
+      margin-bottom:45px;
+  }
+  
+  .innerCard {
+      overflow: hidden;
+      width: 170px;
+      height: 220px;
+      position: relative;
+  }
+  
+  .innerCard img {
+      width:170px;
+      border-radius:10px;
+      position: absolute;
+  }
+  
+  .gameTitle {
+      font-weight: bold;
+      position: absolute;
+      font-size: 16px;
+      top: 175px;
+      left:0px;
+      bottom: 0px;
+      transition: top 0.3s ease-out;
+      width:170px;
+      color:black;
+      z-index:2;
+  }
+  
+  .card:hover .gameTitle {
+      top: 175px;
+  }
+  
+  .borderAnim {
+      border-color: #FF4A39;
+      border-width: 0px;
+      border-style: solid;
+      position: absolute;
+      width: 171px;
+      height: 172px;
+      top:-3px;
+      left:-3px;
+      border-radius: 15px;
+      opacity:0;
+      transform-origin: center;
+      transform: scale(1);
+      transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+  
+    }
+  }

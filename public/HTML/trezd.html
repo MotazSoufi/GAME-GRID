@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Document</title>
+        <style>
+            body{
+                margin:0;
+                background-color: black;
+            }
+
+            .gameGallery {
+                width:100%;
+                height:600px;
+                background-image: url("../Images/ff16BG.png");
+                background-size: cover;
+            }
+
+            .gamePics {
+                margin-top:90px;
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                gap:10px;
+                height:600px;
+                width:400px;
+                overflow-y:hidden;
+                scroll-behavior: smooth;   
+            }
+
+            .gamePics * {
+                width:200px;
+                border-radius: 10px;
+                transition: width 0.3s;
+            }
+
+            .gradientTop {
+                position: absolute;
+                height:100px;
+                width:300px;
+                background: rgb(255,255,255);
+                background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+                border-radius: 0px;
+            }
+
+            .gradientBottom {
+                position: absolute;
+                height:100px;
+                width:300px;
+                margin-top:500px;
+                background: rgb(255,255,255);
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+                border-radius: 0px;
+            }
+
+            .arrowUp {
+                width:50px;
+                position: absolute;
+                margin-top:10px;
+                margin-left:175px;
+                transition: transform 0.1s;
+            }
+
+            .arrowUp:hover {
+                transform:scale(1.1);
+            }
+
+            .arrowDown {
+                width:50px;
+                position: absolute;
+                margin-top:560px;
+                margin-left:175px;
+                transition: transform 0.1s;
+            }
+
+            .arrowDown:hover {
+                transform:scale(1.1);
+            }
+
+            .ffLogo {
+                position: absolute;
+                width:300px;
+                margin-left:76%;
+                margin-top:-6%;
+            }
+
+            @media (max-width: 599px) {
+                .gamePics * {
+                    width:100px;
+                }
+
+                .gamePics {
+                    margin-left: 10px;
+                    gap:5px;
+                    height:300px;
+                    width:200px;
+                    overflow-y:hidden;
+                    scroll-behavior: smooth;   
+                }
+
+                .arrowUp {
+                    width:20px;
+                    margin-top:10px;
+                    margin-left:90px;
+                    transition: transform 0.1s;
+                }
+
+                .arrowDown {
+                    width:20px;
+                    position: absolute;
+                    margin-top:280px;
+                    margin-left:90px;
+                    transition: transform 0.1s;
+                }
+
+                .gradientTop {
+                    height:60px;
+                    width:200px;
+                    background: rgb(255,255,255);
+                    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+                    border-radius: 0px;
+                    
+                }
+
+                .gradientBottom {
+                    position: absolute;
+                    height:60px;
+                    width:200px;
+                    margin-top:240px;
+                    background: rgb(255,255,255);
+                    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+                    border-radius: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gameGallery">
+            <div class="gamePics">
+                <div class="gradientTop"></div>
+                <div class="gradientBottom"></div>
+
+                <img src="../Images/diabloSQUARE.png" style="opacity: 0;">
+                <img src="../Images/spidermanSQUARE.jpg" id="p1">
+                <img src="../Images/ff16SQUARE.png" id="p2">
+                <img src="../Images/re4SQUARE.webp" id="p3">
+                <img src="../Images/hogwartsSQUARE.png" id="p4"> 
+                <img src="../Images/diabloSQUARE.png" id="p5">
+                <img src="../Images/diabloSQUARE.png" style="opacity: 0;">
+                
+
+                <img src="../Images/arrow.png" class="arrowDown">
+                <img src="../Images/arrowUp.png" class="arrowUp">
+            </div>
+
+            <!-- <img src="../Images/ffLogo.webp" class="ffLogo"> -->
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            function handleViewportChange(mediaQuery) {
+                if (mediaQuery.matches) {
+
+                    var scrollVal = 135;
+
+                    $('.arrowDown').click(function() {
+                        scrollDown();
+                    });
+
+                    $('.arrowUp').click(function() {
+                        scrollUp();
+                    });
+
+                    $(document).ready(function() {
+                        $('.gamePics').scrollTop(scrollVal); // Set the initial scroll position (in pixels)
+                        scrollCheck();
+                    });
+
+                    function scrollUp() {
+
+                        if(scrollVal == 30) {
+                            scrollVal = 450;
+                        }
+                        else {
+                            scrollVal = scrollVal - 105;
+                        }
+
+                        $('.gamePics').scrollTop(scrollVal);
+                        scrollCheck();
+                    }
+
+                    function scrollDown() {
+                        if(scrollVal == 450) {
+                            scrollVal = 30;
+                        }
+                        else {
+                            scrollVal = scrollVal + 105;
+                        }
+                        
+
+                        $('.gamePics').scrollTop(scrollVal);
+                        scrollCheck();
+                    }
+
+                    function scrollCheck(){
+                        
+                        switch(scrollVal) {
+                            case 30:
+                                $('#p5').css("width", "100");
+                                $('#p1').css("width", "150");
+                                $('#p2').css("width", "100");
+                            break;
+
+                            case 135:
+                                $('#p1').css("width", "100");
+                                $('#p2').css("width", "150");
+                                $('#p3').css("width", "100");
+                            break;
+
+                            case 240:
+                                $('#p2').css("width", "100");
+                                $('#p3').css("width", "150");
+                                $('#p4').css("width", "100");
+                            break;
+
+                            case 345:
+                                $('#p3').css("width", "100");
+                                $('#p4').css("width", "150");
+                                $('#p5').css("width", "100");
+                            break;
+
+                            case 450:
+                                $('#p4').css("width", "100");
+                                $('#p5').css("width", "150");
+                                $('#p1').css("width", "100");
+                            break;
+                        }
+
+                    }
+                } 
+                
+                // --------------------------  LARGER THAN 600 PIXELS -------------------------------
+                else {
+                    var scrollVal = 270;
+
+                    $('.arrowDown').click(function() {
+                        scrollDown();
+                    });
+
+                    $('.arrowUp').click(function() {
+                        scrollUp();
+                    });
+
+                    $(document).ready(function() {
+                
+                        $('.gamePics').scrollTop(scrollVal); // Set the initial scroll position (in pixels)
+                        scrollCheck();
+                    });
+
+                    function scrollUp() {
+
+                        if(scrollVal == 60) {
+                            scrollVal = 900;
+                        }
+                        else {
+                            scrollVal = scrollVal - 210;
+                        }
+                        
+
+                        $('.gamePics').scrollTop(scrollVal);
+                        scrollCheck();
+                    }
+
+                    function scrollDown() {
+
+
+                        if(scrollVal == 900) {
+                            scrollVal = 60;
+                        }
+                        else {
+                            scrollVal = scrollVal + 210;
+                        }
+                    
+
+                        $('.gamePics').scrollTop(scrollVal);
+                        scrollCheck();
+                    }
+
+                    function scrollCheck(){
+                        switch(scrollVal) {
+                            case 60:
+                                $('#p5').css("width", "200");
+                                $('#p1').css("width", "300");
+                                $('#p2').css("width", "200");
+                            break;
+
+                            case 270:
+                                $('#p1').css("width", "200");
+                                $('#p2').css("width", "300");
+                                $('#p3').css("width", "200");
+                            break;
+
+                            case 480:
+                                $('#p2').css("width", "200");
+                                $('#p3').css("width", "300");
+                                $('#p4').css("width", "200");
+                            break;
+
+                            case 690:
+                                $('#p3').css("width", "200");
+                                $('#p4').css("width", "300");
+                                $('#p5').css("width", "200");
+                            break;
+
+                            case 900:
+                                $('#p4').css("width", "200");
+                                $('#p5').css("width", "300");
+                                $('#p1').css("width", "200");
+                            break;
+                        }
+                             
+                    }
+                }
+            }
+
+            var mediaQuery = window.matchMedia("(max-width: 600px)");
+            handleViewportChange(mediaQuery);
+
+            mediaQuery.addListener(handleViewportChange);
+        </script>
+    </body>
+</html>

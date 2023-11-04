@@ -1,0 +1,23 @@
+.playstationExclusives {
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+  opacity: 1;
+  margin-left:10px;
+  transition: opacity 0.4s, margin-top 0.4s;
+  position: relative;
+  pointer-events:all;
+}
+
+@media (max-width: 599px) {
+  .playstationExclusives {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    opacity: 1;
+    margin-left:5px;
+    transition: opacity 0.4s, margin-top 0.4s;
+    position: relative;
+    pointer-events:all;
+  }
+}

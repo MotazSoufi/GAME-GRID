@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .playstationExclusives {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: space-evenly;
+    opacity: 1;
+    margin-top:0px;
+    transition: opacity 0.4s, margin-top 0.4s;
+    position: relative;
+    pointer-events:all;
+}
+
+.card {
+    background-color: black;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    position: relative;
+}
+
+.innerCard {
+    overflow: hidden;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.innerCard img {
+    width:180px;
+    position: absolute;
+}
+
+.gradient {
+    transform: rotate(270deg);
+    position: absolute;
+    right:115px;
+    height:180px;
+}
+
+.gameTitle {
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    font-size: 18px;
+    left: 190px;
+    top: 20px;
+    bottom: 0px;
+    transition: top 0.3s ease-out;
+    width:160px;
+}
+
+.gameContent {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    top:140px;
+    transition: top 0.3s ease-out;
+}
+
+.gameDes {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    width:160px;
+    top:190px;
+    transition: top 0.3s ease-out;
+}
+
+.card:hover .gameTitle {
+    top: -160px;
+}
+
+.card:hover .gameContent {
+    top: -90px;
+}
+
+.card:hover .gameDes {
+    top: 20px;
+}
+
+.borderAnim {
+    border-color: #FF4A39;
+    border-width: 0px;
+    border-style: solid;
+    position: absolute;
+    width: 361px;
+    height: 182px;
+    top:-3px;
+    left:-3px;
+    border-radius: 15px;
+    opacity:0;
+    transform-origin: center;
+    transform: scale(1);
+    transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+
+}
+
+.borderAnim:hover {
+    border-width: 3px;
+    opacity: 1;
+    transform: scale(1.03);
+}
+    </style>
+</head>
+<body>
+    <div class="playstationExclusives">
+        <div class="card">
+            <div class="innerCard">
+                <img src={props.imgURL} alt="horzion"/>
+                <div class="contentContainer">
+    
+                    <div class="gameTitle">{props.name}</div>
+                    <div class="gameContent">
+                        <strong>Genre:</strong><br/>
+                        {props.genre}
+                    </div>
+    
+                    
+                    <div class="gameDes">
+                        <strong>Release Date: </strong> <br/>
+                        {props.release}
+                        <br/>
+                        <br/>
+                        <strong>Platforms: </strong> <br/>
+                        {props.platforms}
+                        <br/>
+                        <br/>
+                        <strong>Developer: </strong> <br/>
+                        {props.developer}
+                    </div>           
+                </div>
+            </div>
+            <div class="borderAnim"></div>
+        </div>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TESTING 5</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <style>
+            .submitButton {
+                padding: 15px 25px 15px 25px;
+                background-color: #FF4A39;
+                border-width:0px;
+                border-radius:10px;
+                font-size:20px;
+                color:white;
+                font-weight:bolder;
+                font-family: Work Sans;
+                letter-spacing: 3px;
+                position: absolute;
+                z-index: 1;
+                transition: background-color 0.3s;
+            }
+
+            .buttonBorder {
+                width:136px;
+                height:43px;
+                position: absolute;
+                margin-top:4px;
+                margin-left:4px;
+                border-width:2px;
+                border-color:white;
+                border-style:solid;
+                border-radius:8px;
+                z-index: 2;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .buttonContainer:hover .submitButton{
+                background-color: #da3d2f;
+            }
+
+            .buttonContainer:hover .buttonBorder{
+                opacity:1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="buttonContainer" onclick="buttonAnimation()">
+            <input type="submit" value="SIGN IN" class="submitButton">
+            <div class="buttonBorder"></div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            function buttonAnimation() {
+                $('.submitButton').css("background-color","#bb362a");
+            }
+        </script>
+    </body>
+</html>

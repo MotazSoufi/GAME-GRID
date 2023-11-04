@@ -1,0 +1,997 @@
+@font-face {
+    font-family: 'Font1';
+    src: url('../Babapro-Ea4rr.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #555; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF4A39; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ca3629; 
+}
+
+body {
+    background-color: black;
+    margin:0px;
+}
+
+.underline {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    top:0%;
+    transition: top 0.3s;
+    padding: 10px;
+}
+
+.underline:hover {
+    top:-7px;
+    padding-bottom:25px;
+}
+
+.underline::before {
+    content: "";
+    position: absolute;
+    top:35px;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 0px;
+    height: 4px;
+    background-color: #FF4A39;
+    transition: width 0.3s ease;
+    border-radius: 30px;
+}
+
+.underline:hover::before {
+    width: 50%;
+}
+
+.navigation {
+    list-style: none;
+    font-family: Work Sans;
+    letter-spacing: 3px;
+    color:aliceblue;
+    font-weight: bold;
+    font-size: large;
+    z-index: 99;
+    padding-left:25%;
+    padding-top:14px;
+    position: absolute;
+    top:0%;
+    display: flex;
+}
+
+nav ul {
+    margin-right:20px;
+    padding-right:200px;
+}
+
+nav ul li {
+    margin-inline:50px;
+    padding-top:25px;
+    padding-bottom:50px;
+}
+
+.logo {
+    width:200px;
+    position: relative;
+    margin:20px;
+    z-index: 999;
+}
+
+.menuToggle {
+    display:none;
+    z-index: 9999;
+    cursor: pointer; 
+}
+
+.shadow {
+    position:absolute;
+    width:100%;
+    height:210%;
+    top:0%;
+    margin:0px;
+    display:none;
+}
+
+.dropdownContent {
+    display: block;
+    position: absolute;
+    background: hsl(0, 3%, 13%);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    height:0px;
+    width: 600px;
+    border-radius: 10px;
+    transition: height 0.4s;
+    margin-top:0px;
+    margin-left:-11%;
+}
+
+/* For removing gap between Browse and dropdown menu */
+.dropdown {
+    padding-bottom:20px;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    pointer-events: none;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin-right:20px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.column a{
+    color:white;
+    text-decoration: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+    transition: color 0.4s, background-color 0.4s;
+    background-color: transparent;     
+    padding:5px;       
+    margin-bottom:10px;
+    border-radius: 5px;
+}
+
+.arrow {
+    padding: 15px;
+    margin-top:15px;
+    margin-left:-70px;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+    display:block;
+}
+
+.dropdownContent a:hover {
+    color:black;
+    background-color: #FF4A39;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown:hover .dropdownContent {
+    height: 300px;
+}
+
+.dropdown:hover .column {
+    opacity: 1;
+}
+
+.dropdown:hover .options {
+    pointer-events:all;
+}
+
+
+/* ====================================================== */
+
+.spiderman {
+    background-image: url('../Images/spidermanBG.png');
+}
+
+.ff {
+    background-image: url('../Images/ff16BG.png');
+}
+
+.re4 {
+    background-image: url('../Images/re4BG.png');
+}
+
+.hogwarts {
+    background-image: url('../Images/hogwartsBG.png');
+}
+
+.diablo {
+    background-image: url('../Images/diabloBG.png');
+}
+
+
+
+.card {
+    background-color: black;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    position: relative;
+}
+
+.innerCard {
+    overflow: hidden;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.innerCard img {
+    width:180px;
+    position: absolute;
+}
+
+.gradient {
+    transform: rotate(270deg);
+    position: absolute;
+    right:115px;
+    height:180px;
+}
+
+.gameTitle {
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    font-size: 18px;
+    left: 190px;
+    top: 20px;
+    bottom: 0px;
+    transition: top 0.3s ease-out;
+    width:160px;
+}
+
+.gameContent {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    top:140px;
+    transition: top 0.3s ease-out;
+}
+
+.gameDes {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    width:160px;
+    top:190px;
+    transition: top 0.3s ease-out;
+}
+
+.card:hover .gameTitle {
+    top: -160px;
+}
+
+.card:hover .gameContent {
+    top: -90px;
+}
+
+.card:hover .gameDes {
+    top: 20px;
+}
+
+.playstationExclusives {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-evenly;
+    opacity: 1;
+    margin-top:0px;
+    transition: opacity 0.4s, margin-top 0.4s;
+    position: absolute;
+    pointer-events:all;
+}
+
+.xboxExclusives {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-evenly;
+    opacity: 0;
+    margin-top:50px;
+    transition: opacity 0.4s, margin-top 0.4s;
+    position: absolute;
+    pointer-events:none;
+}
+
+.nintendoExclusives {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-evenly;
+    opacity: 0;
+    margin-top:50px;
+    transition: opacity 0.4s, margin-top 0.4s;
+    position: absolute;
+    pointer-events:none;
+}
+
+.chooseConsole {
+    gap:10px;
+    text-align: right;
+    display:inline-flex;
+    left:85%;
+    position: absolute;
+    margin-top:-110px;
+}
+
+
+.playstation {
+    background-image: url("../Images/psLogo.png");
+    background-size: 50px;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-color: #003791; 
+    width:60px;
+    height:60px;  
+    border-radius: 10px;     
+    transition: background-color 0.2s ease-in;   
+    cursor:pointer;   
+}
+
+.xbox {
+    background-image: url("../Images/xboxLogo.png");
+    background-size: 40px;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-color: #b2b2b2;
+    width:60px;
+    height:60px;        
+    border-radius: 10px;      
+    transition: background-color 0.2s ease-in; 
+    cursor:pointer;      
+}
+
+.nintendo {
+    background-image: url("../Images/nintendoLogo.png");
+    background-size: 40px;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-color: #b2b2b2;
+    width:60px;
+    height:60px;        
+    border-radius: 10px;      
+    transition: background-color 0.2s ease-in; 
+    cursor:pointer;      
+}
+
+.consoleExTitle {
+    font-family: Font1;
+    font-size:50px;
+    position: absolute;
+    margin-top:-110px;
+    left:30px;
+    color: white;
+}
+
+.borderAnim {
+    border-color: #FF4A39;
+    border-width: 0px;
+    border-style: solid;
+    position: absolute;
+    width: 361px;
+    height: 182px;
+    top:-3px;
+    left:-3px;
+    border-radius: 15px;
+    opacity:0;
+    transform-origin: center;
+    transform: scale(1);
+    transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+
+}
+
+.borderAnim:hover {
+    border-width: 3px;
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.greyContainer {
+    background-color: #d2d2d2; 
+    height:600px;
+}
+
+
+.franchiseCollection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top:100px;
+    gap:70px;
+    width:100%;
+}
+
+.franchiseCard {
+    background-color: #0D0D0D;
+    height:400px;
+    width:270px;
+    border-radius: 20px;
+    margin-top:10px;
+    position: relative;
+}
+
+.edward {
+    position: absolute;
+    width:310px;
+    margin-top:-30px;
+    margin-left: -20px;
+    transition: margin-top 0.4s;
+}
+
+.cloud {
+    position: absolute;
+    width:220px;
+    margin-top:-40px;
+    margin-left: 30px;
+    transition: margin-top 0.4s;
+}
+
+.dante {
+    position: absolute;
+    width:300px;
+    margin-top:-40px;
+    margin-left: -30px;
+    transition: margin-top 0.4s;
+}
+
+.masterC {
+    position: absolute;
+    width:320px;
+    margin-top:-40px;
+    margin-left: -30px;
+    transition: margin-top 0.4s;
+}
+
+.nfsCar {
+    position: absolute;
+    width:380px;
+    margin-top:73px;
+    margin-left: -50px;
+    transition: margin-top 0.4s;
+}
+
+.subZero {
+    position: absolute;
+    width:320px;
+    margin-top:-30px;
+    margin-left: -25px;
+    transition: margin-top 0.4s;
+}
+
+.gradientF {
+    position: absolute;
+    width:270px;
+    margin-top:34px;
+}
+
+.franchiseLogo {
+    position: absolute;
+    width:230px;
+    margin-top:300px;
+    margin-left: 19px;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.whiteBlock1 {
+    position: absolute;
+    width:270px;
+    height:40px;
+    background-color: #d2d2d2;
+    z-index: -1;
+    margin-top: -7px;
+    margin-left: 0px;
+    transition:width 0.5s;
+}
+
+.franchiseCard:hover .whiteBlock1{
+    width:0px;
+}
+
+.whiteBlock2 {
+    position: absolute;
+    width:11px;
+    height:410px;
+    background-color: #d2d2d2;
+    z-index: -1;
+    margin-top: -8px;
+    margin-left: 270px;
+    transition: height 0.5s;
+}
+
+
+.franchiseCard:hover .whiteBlock2{
+    height:0px;
+}
+
+.whiteBlock3 {
+    position: absolute;
+    width:11px;
+    height:410px;
+    background-color: #d2d2d2;
+    z-index: -1;
+    margin-top: -8px;
+    margin-left: -11px;
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+.franchiseCard:hover .whiteBlock3{
+    transform: scaleY(0);
+}
+
+.whiteBlock4 {
+    position: absolute;
+    width:270px;
+    height:20px;
+    background-color: #d2d2d2;
+    z-index: -1;
+    margin-top: 386px;
+    margin-left: 0px;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.franchiseCard:hover .whiteBlock4{
+    transform: scaleX(0);
+}
+
+
+.borderAnimation {
+    position: absolute;
+    height:404px;
+    width:274px;
+    margin-left:-6px;
+    margin-top:-6px;
+    border-radius: 22px;
+    border-width: 4px;
+    border-color:tomato;
+    border-style: solid;  
+    z-index: -2;
+}
+
+
+
+.franchiseCard:hover .edward{
+    margin-top:-60px;
+}
+
+.franchiseCard:hover .cloud{
+    margin-top:-60px;
+}
+
+.franchiseCard:hover .dante{
+    margin-top:-60px;
+}
+
+.franchiseCard:hover .masterC{
+    margin-top:-60px;
+}
+
+.franchiseCard:hover .nfsCar{
+    margin-top:50px;
+}
+
+.franchiseCard:hover .subZero{
+    margin-top:-50px;
+}
+
+.franchiseCard:hover .franchiseLogo{
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+.gameGallery {
+    width:100%;
+    height:600px;
+    margin-top:70px;
+    overflow: hidden;
+}
+
+.bgIMG {
+    position: absolute;
+    z-index:-1;
+    width:100%;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.gamePics {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    height:600px;
+    width:400px;
+    overflow-y:hidden;
+    scroll-behavior: smooth;   
+}
+
+.gamePics * {
+    width:200px;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.gradientTop {
+    position: absolute;
+    height:100px;
+    width:300px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+    border-radius: 0px;
+}
+
+.gradientBottom {
+    position: absolute;
+    height:100px;
+    width:300px;
+    margin-top:500px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+    border-radius: 0px;
+}
+
+.arrowUp {
+    width:50px;
+    position: absolute;
+    margin-top:10px;
+    margin-left:175px;
+    transition: transform 0.1s;
+}
+
+.arrowUp:hover {
+    transform:scale(1.1);
+}
+
+.arrowDown {
+    width:50px;
+    position: absolute;
+    margin-top:560px;
+    margin-left:175px;
+    transition: transform 0.1s;
+}
+
+.arrowDown:hover {
+    transform:scale(1.1);
+}
+
+.ffLogo {
+    position: absolute;
+    width:300px;
+    margin-left:76%;
+    margin-top:-6%;
+}
+
+.releases {
+    font-family: Font1;
+    color:white;
+    font-size:44px;
+    margin-top:20px;
+    margin-left:20px;
+    position: absolute;
+}
+
+
+@media (min-width: 1041px) and (max-width: 1216px) {
+    nav ul li {
+        margin-inline: 15px;
+    }
+    .navigation {
+        padding-left:15%;
+    }
+    .title {
+        width:550px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1040px) {
+    .navigation {
+        padding-right:0px;
+        padding-top:120px;
+        position: fixed;
+        inset:0 0 0 55%;
+        margin:0px;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        padding-left:0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation[data-visible = "true"]{
+        transform: translateX(0%);
+    }
+
+    nav ul li{
+        padding-top:20px;
+        display:block;
+        
+    }
+
+    .menuToggle {
+        position: absolute;
+        left:90%;
+        top:3%;
+        background-color: transparent;
+        background-image: url(../Images/menuToggle.png);
+        background-size:cover;
+        width:30px;
+        height:30px;
+        border:0;
+        display:block;
+    }
+
+    .menuToggle[menuIcon = "true"] {
+        background-image: url(../Images/closeMenu.png);
+    }
+
+    .shadow[shadowToggle = "true"] {
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .dropdown:hover .dropdownContent {display: block;}
+
+    .arrow {
+        display: none;
+    }
+
+}
+ /* =============================================================== */
+@media (max-width: 599px) {
+
+    .navigation {
+        padding-right:0px;
+        padding-top:120px;
+        position: fixed;
+        inset:0 0 0 55%;
+        margin:0px;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        padding-left:0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation[data-visible = "true"]{
+        transform: translateX(0%);
+    }
+
+    nav ul li{
+        padding-top:20px;
+        display:block;
+        
+    }
+
+    .menuToggle {
+        position: fixed;
+        left:85%;
+        top:3%;
+        background-color: transparent;
+        background-image: url(../Images/menuToggle.png);
+        background-size:cover;
+        width:30px;
+        height:30px;
+        border:0;
+        display:block;
+    }
+
+    .menuToggle[menuIcon = "true"] {
+        background-image: url(../Images/closeMenu.png);
+    }
+
+    .shadow[shadowToggle = "true"] {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.512);
+    }
+
+    .dropdown:hover .dropdownContent {display: block;}
+
+    .arrow {
+        display: none;
+    }
+
+    .dropdown:hover .column {
+        opacity: 0;
+    }
+
+    .dropdown:hover .options {
+        pointer-events:none;
+    }
+
+    .dropdown:hover .dropdownContent {
+        height: 0px;
+    }
+
+    .arrow {
+        display:none;
+    }
+
+
+
+    .gameGallery {
+        width:100%;
+        height:300px;
+        margin-top:30px;
+    }
+
+    .gamePics * {
+        width:100px;
+    }
+
+    .bgIMG {
+        width: 100%;
+    }
+
+    .gamePics {
+        margin-left: 10px;
+        gap:5px;
+        height:300px;
+        width:200px;
+        overflow-y:hidden;
+        scroll-behavior: smooth;   
+    }
+
+    .arrowUp {
+        width:20px;
+        margin-top:10px;
+        margin-left:90px;
+        transition: transform 0.1s;
+    }
+
+    .arrowDown {
+        width:20px;
+        position: absolute;
+        margin-top:280px;
+        margin-left:90px;
+        transition: transform 0.1s;
+    }
+
+    .gradientTop {
+        height:60px;
+        width:110px;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+        border-radius: 0px;
+        margin-top:-1px;
+    }
+
+    .gradientBottom {
+        position: absolute;
+        height:60px;
+        width:110px;
+        margin-top:241px;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+        border-radius: 0px;
+    }
+
+    .releases {
+        font-size:22px;
+        margin-top:0px;
+        margin-left:10px;
+        position: absolute;
+    }
+
+    .consoleExTitle {
+        font-size:20px;
+        position: absolute;
+        margin-top:-105px;
+        left:10px;
+        color: white;
+        width:200px;
+    }
+
+    .chooseConsole {
+        gap:10px;
+        left:55%;
+        margin-top:-105px;
+    }
+    
+    
+    .playstation {
+        background-size: 30px;
+        width:40px;
+        height:40px;  
+    }
+    
+    .xbox {
+        background-size: 30px;
+        width:40px;
+        height:40px;            
+    }
+    
+    .nintendo {
+        background-size: 30px;
+        width:40px;
+        height:40px;        
+    
+    }
+
+
+    .card {
+        width: 170px;
+        height: 170px;
+        font-family: 'Noto Sans Meroitic', sans-serif;
+        color: white;
+        position: relative;
+        margin-bottom:45px;
+    }
+
+    .innerCard {
+        overflow: hidden;
+        width: 170px;
+        height: 220px;
+        position: relative;
+    }
+
+    .innerCard img {
+        width:170px;
+        border-radius:10px;
+        position: absolute;
+    }
+
+    .gameTitle {
+        font-weight: bold;
+        position: absolute;
+        font-size: 16px;
+        top: 175px;
+        left:0px;
+        bottom: 0px;
+        transition: top 0.3s ease-out;
+        width:170px;
+        color:black;
+        z-index:2;
+    }
+
+    .card:hover .gameTitle {
+        top: 175px;
+    }
+
+    .borderAnim {
+        border-color: #FF4A39;
+        border-width: 0px;
+        border-style: solid;
+        position: absolute;
+        width: 171px;
+        height: 172px;
+        top:-3px;
+        left:-3px;
+        border-radius: 15px;
+        opacity:0;
+        transform-origin: center;
+        transform: scale(1);
+        transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+
+    }
+
+    .greyContainer {
+        height:1100px;
+    }
+
+    
+}

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta char="utf-8">
+        <title>Home Page</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Meroitic&display=swap" rel="stylesheet">
+        <script src="JavaScript/index.js"></script>
+        
+        <style>
+
+            @font-face {
+                font-family: 'Font1';
+                src: url('Babapro-Ea4rr.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #555; 
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #FF4A39; 
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #ca3629; 
+            }
+
+            body {
+                background-color: black;
+                margin:0px;
+            }
+
+            #bg {
+                background-repeat: no-repeat; 
+                width: 100%; 
+                height:120%;
+                background-image: url('Images/gowBG.png'); 
+                background-color: black; 
+                position: absolute; 
+            }
+
+            .underline {
+                position: relative;
+                text-decoration: none;
+                color: white;
+                top:0%;
+                transition: top 0.3s;
+                padding: 10px;
+            }
+
+            .underline:hover {
+                top:-7px;
+                padding-bottom:25px;
+            }
+
+            .underline::before {
+                content: "";
+                position: absolute;
+                top:35px;
+                bottom: 50%;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                width: 0px;
+                height: 4px;
+                background-color: #FF4A39;
+                transition: width 0.3s ease;
+                border-radius: 30px;
+            }
+
+            .underline:hover::before {
+                width: 50%;
+            }
+
+            .navigation {
+                list-style: none;
+                font-family: Noto Sans Meroitic;
+                letter-spacing: 3px;
+                color:aliceblue;
+                font-weight: bold;
+                font-size: large;
+                z-index: 99;
+                padding-left:25%;
+                padding-top:14px;
+                position: absolute;
+                top:0%;
+                display: flex;
+            }
+
+            nav ul {
+                margin-right:20px;
+                padding-right:200px;
+            }
+
+            nav ul li {
+                margin-inline:50px;
+                padding-top:25px;
+                padding-bottom:50px;
+            }
+
+            .logo {
+                width:200px;
+                position: relative;
+                margin:20px;
+                z-index: 999;
+            }
+
+            .menuToggle {
+                display:none;
+                z-index: 9999;
+                cursor: pointer; 
+            }
+
+            .shadow {
+                position:absolute;
+                width:100%;
+                height:210%;
+                top:0%;
+                margin:0px;
+                display:none;
+            }
+
+            .title {
+                position: absolute; 
+                left: 7%; 
+                top:50%; 
+                width:820px;
+                font-family: Font1;
+                color: white;
+                font-size:62px;
+            }
+            
+            .kratos {
+                position: absolute;
+                width:500px;
+                top:18%; 
+                left:54%;
+            }
+
+
+            .dropdownContent {
+                display: block;
+                position: absolute;
+                background: hsla(0, 3%, 13%, 0.573);
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                backdrop-filter: blur(1rem);
+                z-index: 1;
+                height:0px;
+                width: 600px;
+                border-radius: 10px;
+                transition: height 0.4s;
+                margin-top:0px;
+                margin-left:-11%;
+            }
+
+            /* For removing gap between Browse and dropdown menu */
+            .dropdown {
+                padding-bottom:20px;
+            }
+
+
+            .options {
+                display: flex;
+                flex-direction: row;
+                padding-left: 10px;
+                pointer-events: none;
+            }
+
+            .column {
+                display: flex;
+                flex-direction: column;
+                margin-right:20px;
+                opacity: 0;
+                transition: opacity 0.4s;
+            }
+            
+            .column a{
+                color:white;
+                text-decoration: none;
+                padding-bottom: 5px;
+                font-size: 15px;
+                
+                transition: text-decoration 0.2s;
+                background-color: transparent;     
+                padding:5px;       
+                margin-bottom:10px;
+                border-radius: 5px;
+            }
+
+            .arrow {
+                padding: 15px;
+                margin-top:15px;
+                margin-left:-70px;
+                transform: rotate(0deg);
+                transition: transform 0.3s;
+                display:block;
+            }
+
+            .dropdownContent a:hover {
+                text-decoration: underline;
+                text-decoration-color:#FF4A39;
+                
+            }
+
+            .dropdown:hover .arrow {
+                transform: rotate(180deg);
+            }
+
+            .dropdown:hover .dropdownContent {
+                height: 300px;
+            }
+
+            .dropdown:hover .column {
+                opacity: 1;
+            }
+
+            .dropdown:hover .options {
+                pointer-events:all;
+            }
+
+            
+            .image-container {
+                display: flex;
+                gap: 10px;
+            }
+
+            .discover {
+                width: 150px;
+                transition: transform 0.3s, filter 0.3s;
+                filter: grayscale(100%);
+            }
+
+            .discover:hover {
+                z-index: 1;
+                transform: scale(1.35);
+                filter: grayscale(0%);
+            }
+
+            .image-container:nth-child(2) {
+                margin-left: 80px;
+            }
+
+            .image-container:nth-child(3) {
+                margin-left: 160px;
+            }
+
+            .image-container:nth-child(4) {
+                margin-left: 240px;
+            }
+
+            .image-container:nth-child(2) img {
+                margin-top: -30px;  
+            }
+
+            .image-container:nth-child(3) img {
+                margin-top: -30px; 
+            }
+
+            .image-container:nth-child(4) img {
+                margin-top: -30px; 
+            }
+
+            .transition1 {
+                position: absolute; 
+                left:0%; 
+                top:69%; 
+                width:100%;
+            }
+
+            .discoverTitle {
+                font-family: Font1;
+                font-size: 55px;
+                color: white;
+                padding: 50px;
+                padding-top: 1100px;
+                width:44%;
+                position: absolute;
+            }
+
+            .discoverWord {
+                font-weight: bold;
+                color: #FF4A39;
+                font-size: 80px;
+            }
+
+            .hexaContainer {
+                top:1100px; 
+                padding-left: 50%; 
+                position: absolute;
+            }
+
+            .hex {
+                width:150px;
+            }
+
+            .nightcity {
+                top:1700px; 
+                position: absolute; 
+                width:100%;
+            }
+
+            .feedTitle {
+                color: #FF4A39; 
+                position: absolute; 
+                font-size:55px; 
+                font-family: Font1; 
+                width:700px; 
+                top:1990px; 
+                left:52%; 
+                font-weight: bold;
+            }
+
+            .feedContent {
+                color:white; 
+                font-family: Noto Sans Meroitic; 
+                font-size: 25px; 
+                font-weight: lighter;
+            }
+            
+
+            @media (min-width: 1041px) and (max-width: 1216px) {
+                nav ul li {
+                    margin-inline: 15px;
+                }
+                .navigation {
+                    padding-left:15%;
+                }
+                .title {
+                    width:550px;
+                }
+            }
+
+            @media (min-width: 600px) and (max-width: 1040px) {
+                .navigation {
+                    padding-right:0px;
+                    padding-top:120px;
+                    position: fixed;
+                    inset:0 0 0 55%;
+                    margin:0px;
+                    background: hsl(0 0% 100% / 0.1);
+                    backdrop-filter: blur(1rem);
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in;
+                    padding-left:0px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .navigation[data-visible = "true"]{
+                    transform: translateX(0%);
+                }
+
+                nav ul li{
+                    padding-top:20px;
+                    display:block;
+                    
+                }
+
+                .menuToggle {
+                    position: absolute;
+                    left:90%;
+                    top:3%;
+                    background-color: transparent;
+                    background-image: url(Images/menuToggle.png);
+                    background-size:cover;
+                    width:30px;
+                    height:30px;
+                    border:0;
+                    display:block;
+                }
+
+                .menuToggle[menuIcon = "true"] {
+                    background-image: url(Images/closeMenu.png);
+                }
+
+                .shadow[shadowToggle = "true"] {
+                    background-color: rgba(0,0,0,0.4);
+                }
+
+                .title {
+                    width:550px;
+                }
+                
+                .kratos {
+                    width:400px;
+                }
+
+                .dropdown:hover .dropdownContent {display: block;}
+
+                .arrow {
+                    display: none;
+                }
+
+                .transition1 {
+                    top:95%; 
+                }
+
+            }
+             /* =============================================================== */
+            @media (max-width: 599px) {
+
+                .title {
+                    left: 7%; 
+                    top:37%; 
+                    width:200px;
+                    font-size:25px;
+                }
+
+                .navigation {
+                    padding-right:0px;
+                    padding-top:120px;
+                    position: fixed;
+                    inset:0 0 0 55%;
+                    margin:0px;
+                    background: hsl(0 0% 100% / 0.1);
+                    backdrop-filter: blur(1rem);
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in;
+                    padding-left:0px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .navigation[data-visible = "true"]{
+                    transform: translateX(0%);
+                }
+
+                nav ul li{
+                    padding-top:20px;
+                    display:block;
+                    
+                }
+
+                .menuToggle {
+                    position: fixed;
+                    left:85%;
+                    top:3%;
+                    background-color: transparent;
+                    background-image: url(Images/menuToggle.png);
+                    background-size:cover;
+                    width:30px;
+                    height:30px;
+                    border:0;
+                    display:block;
+                }
+
+                .menuToggle[menuIcon = "true"] {
+                    background-image: url(Images/closeMenu.png);
+                }
+
+                .shadow[shadowToggle = "true"] {
+                    display: block;
+                    background-color: rgba(0, 0, 0, 0.512);
+                }
+
+                .kratos {
+                    width:280px;
+                }
+
+                .dropdown:hover .dropdownContent {display: block;}
+
+                .arrow {
+                    display: none;
+                }
+
+                .transition1 {
+                    top:65%; 
+                    width: 120%;
+                }
+
+                #bg {
+                    height:80%;
+                    width: 120%;
+                }
+
+                .hexaContainer {
+                    padding-top:0px; 
+                    padding-left: 30%; 
+                }
+
+                .discoverTitle {
+                    font-size: 30px;  
+                    top: -430px;
+                    left:9%;
+                    width:50%;
+                    text-align: center;
+                    width:300px;
+                }
+
+                .discoverWord {
+                    font-size: 40px;  
+                }
+
+                .discover {
+                    width: 70px;
+                }
+
+                .hex {
+                    width:70px;
+                }
+
+                .image-container:nth-child(2) {
+                    margin-left: 40px;
+                }
+
+                .image-container:nth-child(3) {
+                    margin-left: 80px;
+                }
+
+                .image-container:nth-child(4) {
+                    margin-left: 120px;
+                }
+
+                .image-container:nth-child(2) img {
+                    margin-top: -10px; 
+                }
+
+                .image-container:nth-child(3) img {
+                    margin-top: -10px; 
+                }
+
+                .image-container:nth-child(4) img {
+                    margin-top: -10px; 
+                }
+
+                .hexaContainer {
+                    top:900px; 
+                    padding-left: 15%; 
+                    position: absolute;
+                }
+
+                .nightcity {
+                    top:1250px; 
+                    position: absolute; 
+                    width:120%;
+                }
+
+                .feedTitle {
+                    font-size:25px; 
+                    width:200px; 
+                    top:1300px; 
+                    left:58%; 
+                }
+
+                .feedContent {
+                    font-size: 12px; 
+                }
+
+                .dropdown:hover .column {
+                    opacity: 0;
+                }
+
+                .dropdown:hover .options {
+                    pointer-events:none;
+                }
+
+                .dropdown:hover .dropdownContent {
+                    height: 0px;
+                }
+
+                #kratos {
+                    margin-left: -40px;
+                }
+
+                .arrow {
+                    display:none;
+                }
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- <video autoplay muted loop class="backgroundVideo">
+            <source src="Videos/BGvideo.mp4" type="video/mp4">
+        </video> -->
+
+
+
+        <!-- <img src="Images/gowBG.png" style="position: absolute; top:0%; left:0%;" id="bg" width="110%">
+        -->
+
+        <div id="bg" style="background-position-x: 0%; background-position-y: 0%;"></div>
+
+        <a href="index.html">
+            <img class="logo" src="Images/logo2.png">
+        </a>
+
+        <nav>
+            <ul class="navigation" id="navigationBar" data-visible="false">
+                
+        
+                    <li><a href="browse.html" class="underline">BROWSE</a></li>
+                    <span class="dropdown">
+                        <img src="Images/arrow.png" width="18" class="arrow">
+                        <div class="dropdownContent">
+                            <div class="options">
+                                <div class="column">
+                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Platform</h6>
+                                    <a href="#">PlayStation</a>
+                                    <a href="#">Xbox</a>
+                                    <a href="#">Nintendo</a>
+                                </div>
+                            
+                                <div class="column">
+                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Genre</h6>
+                                    <a href="#">Action</a>
+                                    <a href="#">RPG</a>
+                                    <a href="#">Puzzle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+   
+                </li>
+                <li><a href="feed.html" class="underline">FEED</a></li>
+                <li><a href="lists.html" class="underline">MY LISTS</a></li>
+                <li><a href="profile.html" class="underline">PROFILE</a></li>
+            </ul>
+        </nav>
+
+    
+
+        
+
+        <button onclick="toggleMenu()" class="menuToggle" id="menuToggle" menuIcon="false"> 
+        </button>
+
+    
+
+        <div class="title">LEVEL UP YOUR GAMING EXPERIENCE</div>
+        
+        <img src="Images/kratos.png" class="kratos" style="position: absolute; top:18%; left:54%;" id="kratos">
+        
+        <img src="Images/transition1.png" class="transition1">
+    
+        <div class="hexaContainer">
+            <div class="image-container">
+                <img src="Images/horzion.png" class="discover">
+                <img src="Images/sackboy.png" class="discover">
+                <img src="Images/hogwarts.png" class="discover">
+                <img src="Images/hexagon.png" class="hex">
+            </div>
+            <div class="image-container">
+                <img src="Images/diablo.png" class="discover">
+                <img src="Images/nfs.png" class="discover">
+                <img src="Images/uncharted4.png" class="discover">
+            </div>
+            <div class="image-container">
+                <img src="Images/cyberpunk.png" class="discover">
+                <img src="Images/persona5.png" class="discover">   
+            </div>
+            <div class="image-container">
+                <img src="Images/hexagonYellow.png" class="hex">
+                <img src="Images/zelda.png" class="discover">
+                <img src="Images/cuphead.png" class="discover">
+            </div>
+        </div>
+
+        <div class="discoverTitle">
+            <span class="discoverWord">Discover</span> a variety of games across different platforms
+        </div>
+    
+
+        <table height="100"></table>
+
+
+        <video autoplay muted loop class="nightcity">
+            <source src="Videos/nightcity.mp4" type="video/mp4">
+        </video>
+
+        <div class="feedTitle">
+            Keep up with your favorite games... <br>
+            <span class="feedContent">by following them for the latest news and updates</span>
+        </div>
+        
+
+        <table class="shadow" shadowToggle="false"></table>
+
+        </table>
+
+        
+
+    </body>
+</html>

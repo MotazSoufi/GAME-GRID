@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta char="utf-8">
+        <title>Home Page</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="/Images/logo.png" type="image/png">
+        <script src="JavaScript/index.js"></script>
+        <link rel="stylesheet" href="/CSS/index.css" type="text/css">
+
+    </head>
+
+    <body>
+
+        <!-- <video autoplay muted loop class="backgroundVideo">
+            <source src="Videos/BGvideo.mp4" type="video/mp4">
+        </video> -->
+
+
+
+        <!-- <img src="Images/gowBG.png" style="position: absolute; top:0%; left:0%;" id="bg" width="110%">
+        -->
+
+        <div id="bg" style="background-position-x: 0%; background-position-y: 0%;"></div>
+
+        <a href="/">
+            <img class="logo" src="Images/logo2.png">
+        </a>
+
+        <nav>
+            <ul class="navigation" id="navigationBar" data-visible="false">
+                
+        
+                    <li><a href="/browse" class="underline">BROWSE</a></li>
+                    <span class="dropdown">
+                        <img src="Images/arrow.png" width="18" class="arrow">
+                        <div class="dropdownContent">
+                            <div class="options">
+                                <div class="column">
+                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Platform</h6>
+                                    <a href="#">PlayStation</a>
+                                    <a href="#">Xbox</a>
+                                    <a href="#">Nintendo</a>
+                                </div>
+                            
+                                <div class="column">
+                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Genre</h6>
+                                    <a href="#">Action</a>
+                                    <a href="#">RPG</a>
+                                    <a href="#">Puzzle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+   
+                </li>
+                <li><a href="feed.html" class="underline">FEED</a></li>
+                <li><a href="lists.html" class="underline">MY LISTS</a></li>
+                <li><a href="profile.html" class="underline">PROFILE</a></li>
+            </ul>
+        </nav>
+
+        <button onclick="toggleMenu()" class="menuToggle" id="menuToggle" menuIcon="false"></button>
+
+    
+        <% if(loggedUser) { %>
+            <div style="position: absolute; color:white; font-size:20px; left:1000px; background-color: blue; z-index:30;">
+                <%= emailVal %>
+                <br>
+                <%= passwordVal %>
+            </div>
+        <% } %>
+
+        <div class="title">LEVEL UP YOUR GAMING EXPERIENCE</div>
+        
+        <img src="Images/kratos.png" class="kratos" style="position: absolute; top:18%; left:54%;" id="kratos">
+        
+        <img src="Images/transition1.png" class="transition1">
+    
+        <div class="hexaContainer">
+            <div class="image-container">
+                <img src="Images/horzion.png" class="discover">
+                <img src="Images/sackboy.png" class="discover">
+                <img src="Images/hogwarts.png" class="discover">
+                <img src="Images/hexagon.png" class="hex">
+            </div>
+            <div class="image-container">
+                <img src="Images/diablo.png" class="discover">
+                <img src="Images/nfs.png" class="discover">
+                <img src="Images/uncharted4.png" class="discover">
+            </div>
+            <div class="image-container">
+                <img src="Images/cyberpunk.png" class="discover">
+                <img src="Images/persona5.png" class="discover">   
+            </div>
+            <div class="image-container">
+                <img src="Images/hexagonYellow.png" class="hex">
+                <img src="Images/zelda.png" class="discover">
+                <img src="Images/cuphead.png" class="discover">
+            </div>
+        </div>
+
+        <div class="discoverTitle">
+            <span class="discoverWord">Discover</span> a variety of games across different platforms
+        </div>
+    
+
+        <table height="100"></table>
+
+
+        <video autoplay muted loop class="nightcity">
+            <source src="/Videos/nightcity.mp4" type="video/mp4">
+        </video>
+
+        <div class="feedTitle">
+            Keep up with your favorite games... <br>
+            <span class="feedContent">by following them for the latest news and updates</span>
+        </div>
+        
+
+        <table class="shadow" shadowToggle="false"></table>
+
+        </table>
+
+        
+
+    </body>
+</html>

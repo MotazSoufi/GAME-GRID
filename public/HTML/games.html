@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Browse Games</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Meroitic&display=swap" rel="stylesheet">
+        
+        <style>
+
+            body {
+                margin:0;
+            }
+            @font-face {
+                font-family: 'Font1';
+                src: url('Babapro-Ea4rr.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            .card {
+                width: 170px;
+                height: 170px;
+                font-family: 'Noto Sans Meroitic', sans-serif;
+                color: white;
+                position: relative;
+                margin-bottom:45px;
+            }
+
+            .innerCard {
+                overflow: hidden;
+                width: 170px;
+                height: 220px;
+                position: relative;
+            }
+
+            .innerCard img {
+                width:170px;
+                border-radius:10px;
+                position: absolute;
+            }
+
+            .gameTitle {
+                font-weight: bold;
+                position: absolute;
+                font-size: 16px;
+                top: 175px;
+                bottom: 0px;
+                transition: top 0.3s ease-out;
+                width:170px;
+                color:black;
+            }
+
+            .gameContent {
+                letter-spacing: 1px;
+                position: absolute;
+                font-size:12px;
+                left:190px;
+                top:140px;
+                transition: top 0.3s ease-out;
+            }
+
+            .gameDes {
+                letter-spacing: 1px;
+                position: absolute;
+                font-size:12px;
+                left:190px;
+                width:160px;
+                top:190px;
+                transition: top 0.3s ease-out;
+            }
+
+            .borderAnim {
+                border-color: #FF4A39;
+                border-width: 0px;
+                border-style: solid;
+                position: absolute;
+                width: 171px;
+                height: 172px;
+                top:-3px;
+                left:-3px;
+                border-radius: 15px;
+                opacity:0;
+                transform-origin: center;
+                transform: scale(1);
+                transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+
+            }
+
+            .borderAnim:hover {
+                border-width: 3px;
+                opacity: 1;
+                transform: scale(1.03);
+            }
+
+            .playstationExclusives {
+                display: flex;
+                flex-wrap: wrap;
+                gap:10px;
+                justify-content: space-evenly;
+                opacity: 1;
+                margin-top:0px;
+                transition: opacity 0.4s, margin-top 0.4s;
+                position: absolute;
+                pointer-events:all;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div style="background-color: #d2d2d2; height:560px; padding-top: 20px;">
+    
+            
+            <div class="playstationExclusives">
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p5.png">
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Horizon: Forbidden West</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                RPG, Action
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                February 18, 2022
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5, PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Guerrilla Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/spidermanSQUARE.jpg">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Spider-man 2</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                October 20, 2023
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Insomniac Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p9.jpg">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Sackboy: A Big Adventure</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Platformer
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                19 November 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5, PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Sumo Digital
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p7.webp">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Ratchet & Clank Rift Apart</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Platform, Shooter
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                June 11, 2021
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Insomniac Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+    
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p8.webp">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Returnal</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Rogue-like, Shooter
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                April 30, 2021
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Housemarque
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+        
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p10.webp">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Demon's Souls</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Role-playing
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                November 19, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Bluepoint Games
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p11.jpg">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">Ghost of Tsushima</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                July 17, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS5, PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Sucker Punch Productions
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+    
+                <div class="card">
+                    <div class="innerCard">
+                        <img src="../Images/p12.png">
+                        
+                        <div class="contentContainer">
+            
+                            <div class="gameTitle">The Last of Us Part II</div>
+                            <div class="gameContent">
+                                <strong>Genre:</strong><br>
+                                Action, Adventure
+                            </div>
+            
+                            
+                            <div class="gameDes">
+                                <strong>Release Date: </strong> <br>
+                                June 19, 2020
+                                <br>
+                                <br>
+                                <strong>Platforms: </strong> <br>
+                                PS4
+                                <br>
+                                <br>
+                                <strong>Developer: </strong> <br>
+                                Naughty Dog
+                            </div>           
+                        </div>
+                    </div>
+                    <div class="borderAnim"></div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
