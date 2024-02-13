@@ -151,12 +151,12 @@
             }
 
             .buttonPressed {
-                background-color: #bb362a;
+                background-color: #bb8d2a;
             }
 
             .showButton {
                 position: absolute;
-                color:#FF4A39;
+                color:#ffe600;
                 font-family: Work Sans;
                 font-weight:bolder;
                 font-size:14px;
@@ -189,7 +189,7 @@
     <body>
         <img src="../Images/logInBG.png" class="logInIMG">
 
-        <a href="index.html" style="position: absolute;">
+        <a href="/" style="position: absolute;">
             <img src="../Images/logo2.png" class="logo"> 
         </a>
 
@@ -197,11 +197,11 @@
             <div style="font-size:32px; font-family: Font1; font-weight:bolder; margin-top:45px; word-spacing: 10px; text-align: center; margin-bottom:40px;">
                 SIGN IN
             </div>
-            <% if(locals.incorrect) { %>
+            <% if(locals.failureMessage) { %>
             <form action="/login" method="POST" class="logForm">
-                <div class="incorrectContainer"><%= incorrect %></div>
+                <div class="incorrectContainer">HELOOOOOOOOOOOOOOOO</div>
                 <div class="logBorderEmail" style="margin-top: 44px;"> </div>
-                <input type="text" name="email" class="textBox" placeholder="EMAIL" required style="margin-top:50px; margin-bottom:35px;" onclick="borderStartEmail()">
+                <input type="text" name="username" class="textBox" placeholder="EMAIL" required style="margin-top:50px; margin-bottom:35px;" onclick="borderStartEmail()">
                 <div class="logBorderPassword" style="margin-top: 114px;"> </div>
                 <input type="password" name="password" placeholder="PASSWORD" class="textBox passwordBox" required style="margin-top:120px; margin-bottom: 20px;" onclick="borderStartPassword()">
                 <div class="buttonContainer" onclick="buttonAnimation()" >
@@ -214,7 +214,7 @@
         
                 <form action="/login" method="POST" class="logForm">
                     <div class="logBorderEmail"> </div>
-                    <input type="text" name="email" class="textBox" placeholder="EMAIL" required style="margin-bottom:35px;" onclick="borderStartEmail()">
+                    <input type="text" name="username" class="textBox" placeholder="EMAIL" required style="margin-bottom:35px;" onclick="borderStartEmail()">
                     <div class="logBorderPassword"> </div>
                     <input type="password" name="password" placeholder="PASSWORD" class="textBox passwordBox" required style="margin-top:70px; margin-bottom: 20px;" onclick="borderStartPassword()">
                     <div class="buttonContainer" onclick="buttonAnimation()">
@@ -225,6 +225,7 @@
                 <div class="showButton" onclick="showToggle()">SHOW</div>
             <%}%>
 
+            <div style="margin-top:300px; font-family: Work Sans; margin-left: 50px;">Don't have an account? <a href="/register" style="color:#FF4A39; text-decoration: none;">Register now</a></div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

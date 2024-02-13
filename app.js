@@ -1,81 +1,243 @@
-import express from "express";
-import bodyParser from "body-parser";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-const __dirname = dirname(fileURLToPath(import.meta.url));
+//jshint esversion:6
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const app = express();
-const port = 3000;
 
-var loginValid;
+app.use(express.static("public"));
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-var email;
-var password;
-var loggedIn = false;
+app.use(session({
+    secret: "Our little secret.",
+    resave: false,
+    saveUninitialized: false
+}));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use(express.static(__dirname + "/public"));
+mongoose.connect("mongodb://0.0.0.0:27017/UsersDatabase", {useNewUrlParser: true});
 
+const userSchema = new mongoose.Schema({
+    email: String,
+    password: String,
+    nickname: String,
+    games: Array
+});
 
-function loginInfo(req, res, next) {
-    email = req.body["email"];
-    password = req.body["password"];  
+userSchema.plugin(passportLocalMongoose); //hash and salt
 
-    if(email == "email@hotmail.com" && password == "password123") {
-        loginValid = true;
-        loggedIn = true;
+const User = new mongoose.model("User", userSchema);
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.get("/", function(req, res){
+
+    if(req.isAuthenticated()) {
+        res.render("index.ejs", {
+            nickname: req.user.nickname
+        });
+    } else {
+        res.render("index.ejs");
     }
-    else {
-        loginValid = false;
+});
+
+app.get("/profile", function(req, res){
+
+    if(req.isAuthenticated()) {
+        res.render("profile.ejs", {
+            nickname: req.user.nickname
+        });
+    } else {
+        res.render("login.ejs");
     }
-    next();
+});
+
+app.get("/lists", function(req, res){
+
+    if(req.isAuthenticated()) {
+        res.render("lists.ejs", {
+            nickname: req.user.nickname,
+            gameList: req.user.games,
+            gameImageList: getImages(req.user.games)
+        });
+    } else {
+        res.render("login.ejs");
+    }
+});
+
+function getImages(gameArray) {
+    var gameImages = [];
+
+    for(var i = 0; i < gameArray.length; i++) {
+        switch(gameArray[i]) {
+            case "elden-ring":
+                gameImages.push("https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/0Jz6uJLxOK7JOMMfcfHFBi1D.png");
+            break;
+
+            case "batman":
+                gameImages.push("https://image.api.playstation.com/cdn/EP1018/CUSA00135_00/gIBLibuNu1I91g9FYzkqBJFLMd1X9OaD.png");
+            break;
+        }
+    }
+
+    return gameImages;
 }
 
-app.use(loginInfo);
-
-app.get("/", (req,res) => {
-    res.render("index.ejs", {
-        loggedUser: loggedIn,
-        emailVal: email,
-        passwordVal: password,
-    });
-});
-
-app.get("/browse", (req,res) => {
-    res.render("browse.ejs", {
-        loggedUser: loggedIn,
-        emailVal: email,
-        passwordVal: password,
-    });
-});
-
-app.get("/elden-ring", (req,res) => {
-    res.render("eldenring.ejs");
-});
-
-app.get("/login", (req,res) => {
-    res.render("login.ejs");
-});
-
-app.post("/login", (req,res) => {
-
+app.get("/browse", function(req, res){
     
-        if(loginValid) {
-            res.render("browse.ejs", {
-                emailVal: email,
-                passwordVal: password,
-                loggedUser: true,
-            });
-        }
-        else {
-            res.render("login.ejs", {
-                incorrect: "Incorrect email address or password. Please enter the correct email or password.",
-            });
-        }
-
+    if(req.isAuthenticated()) {
+        res.render("browse.ejs", {
+            nickname: req.user.nickname
+        });
+    } else {
+        res.render("browse.ejs");
+    }
+    
 });
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+app.get("/elden-ring", function(req, res){
+    if(req.isAuthenticated()) {
+
+        if(req.user.games.includes("elden-ring")) {
+            res.render("eldenring.ejs", {
+                nickname: req.user.nickname,
+                wishlisted: true
+            });
+        } else {
+            res.render("eldenring.ejs", {
+                nickname: req.user.nickname
+            });
+        }
+    } else {
+        res.render("eldenring.ejs");
+    }
+});
+
+app.get("/batman", function(req, res){
+    if(req.isAuthenticated()) {
+
+        if(req.user.games.includes("batman")) {
+            res.render("batman.ejs", {
+                nickname: req.user.nickname,
+                wishlisted: true
+            });
+        } else {
+            res.render("batman.ejs", {
+                nickname: req.user.nickname
+            });
+        }
+    } else {
+        res.render("batman.ejs");
+    }
+});
+
+
+app.get("/wishlist/:id", function(req,res) {
+    if(req.isAuthenticated()) {
+        if(req.user.games.includes(req.params.id)) {
+            const indexToRemove = req.user.games.indexOf(req.params.id);
+
+            req.user.games.splice(indexToRemove, 1);
+            req.user.save();
+        } else {
+            req.user.games.push(req.params.id);
+            req.user.save();
+        }     
+        res.status(204).end();
+    } else {
+        res.render("login.ejs");
+    }
+});
+
+app.get("/login", function(req, res){
+    if(req.isAuthenticated()) {
+        res.render("index.ejs", {
+            nickname: req.user.nickname,
+        });
+    } else {
+        res.render("login.ejs");
+    }
+});
+
+app.get("/register", function(req, res){
+    
+    if(req.isAuthenticated()) {
+        res.render("index.ejs", {
+            nickname: req.user.nickname,
+        });
+    } else {
+        res.render("register.ejs");
+    }
+});
+
+
+app.get("/logout", function(req, res) {
+    req.logout(function(err) {
+       if(err) {
+            console.log(err);
+       } else {
+            res.redirect("/browse"); 
+       }
+    });
+});
+
+app.post("/register", function(req, res){
+
+    const newUser = new User({
+        nickname: req.body["nickname"],
+        username: req.body["username"]
+    });
+
+    User.register(newUser, req.body["password"], function(err, user){
+        if(err) {
+            console.log(err);
+            res.render("register.ejs", {
+                errorMessage: true
+            });
+        } else {
+            passport.authenticate("local")(req, res, function() {
+                res.render("browse.ejs");
+            });
+        }
+    });
+});
+
+
+app.post("/login", function(req, res) {
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+
+    req.login(user, function(err) {
+
+        if(err) {
+            console.log(err);
+        } else {
+            passport.authenticate("local", { failureRedirect: "/login"})(req, res, function() {
+                res.render("browse.ejs", {
+                    nickname: req.user.nickname
+                });
+            });
+        }
+
+        
+    });
+});
+
+
+app.listen(3000, function() {
+    console.log("Server started on port 3000");
 });

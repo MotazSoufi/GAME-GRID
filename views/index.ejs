@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <link rel="icon" href="/Images/logo.png" type="image/png">
-        <script src="JavaScript/index.js"></script>
+        
         <link rel="stylesheet" href="/CSS/index.css" type="text/css">
 
     </head>
@@ -27,53 +27,7 @@
 
         <div id="bg" style="background-position-x: 0%; background-position-y: 0%;"></div>
 
-        <a href="/">
-            <img class="logo" src="Images/logo2.png">
-        </a>
-
-        <nav>
-            <ul class="navigation" id="navigationBar" data-visible="false">
-                
-        
-                    <li><a href="/browse" class="underline">BROWSE</a></li>
-                    <span class="dropdown">
-                        <img src="Images/arrow.png" width="18" class="arrow">
-                        <div class="dropdownContent">
-                            <div class="options">
-                                <div class="column">
-                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Platform</h6>
-                                    <a href="#">PlayStation</a>
-                                    <a href="#">Xbox</a>
-                                    <a href="#">Nintendo</a>
-                                </div>
-                            
-                                <div class="column">
-                                    <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Genre</h6>
-                                    <a href="#">Action</a>
-                                    <a href="#">RPG</a>
-                                    <a href="#">Puzzle</a>
-                                </div>
-                            </div>
-                        </div>
-                    </span>
-   
-                </li>
-                <li><a href="feed.html" class="underline">FEED</a></li>
-                <li><a href="lists.html" class="underline">MY LISTS</a></li>
-                <li><a href="profile.html" class="underline">PROFILE</a></li>
-            </ul>
-        </nav>
-
-        <button onclick="toggleMenu()" class="menuToggle" id="menuToggle" menuIcon="false"></button>
-
-    
-        <% if(loggedUser) { %>
-            <div style="position: absolute; color:white; font-size:20px; left:1000px; background-color: blue; z-index:30;">
-                <%= emailVal %>
-                <br>
-                <%= passwordVal %>
-            </div>
-        <% } %>
+        <%- include("partials/header.ejs")%>
 
         <div class="title">LEVEL UP YOUR GAMING EXPERIENCE</div>
         
@@ -127,6 +81,7 @@
         </table>
 
         
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="JavaScript/index.js"></script>
     </body>
 </html>

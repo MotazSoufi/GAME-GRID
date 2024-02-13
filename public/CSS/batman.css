@@ -1,0 +1,887 @@
+@font-face {
+    font-family: 'Font1';
+    src: url('../Babapro-Ea4rr.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #555; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF4A39; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ca3629; 
+}
+
+body {
+    background-color: black;
+    margin:0px;
+}
+
+#bg {
+    background-repeat: no-repeat; 
+    width: 100%; 
+    height:120%;
+    background-image: url('../Images/gowBG.png'); 
+    background-color: black; 
+    position: absolute; 
+}
+
+.underline {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    top:0%;
+    transition: top 0.3s;
+    padding: 10px;
+}
+
+.underline:hover {
+    top:-7px;
+    padding-bottom:25px;
+}
+
+.underline::before {
+    content: "";
+    position: absolute;
+    top:35px;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 0px;
+    height: 4px;
+    background-color: #FF4A39;
+    transition: width 0.3s ease;
+    border-radius: 30px;
+}
+
+.underline:hover::before {
+    width: 50%;
+}
+
+.navigation {
+    list-style: none;
+    font-family: Work Sans;
+    letter-spacing: 3px;
+    color:aliceblue;
+    font-weight: bold;
+    font-size: large;
+    z-index: 99;
+    padding-left:25%;
+    padding-top:14px;
+    position: absolute;
+    top:0%;
+    display: flex;
+}
+
+nav ul {
+    margin-right:20px;
+    padding-right:200px;
+}
+
+nav ul li {
+    margin-inline:50px;
+    padding-top:25px;
+    padding-bottom:50px;
+}
+
+.logo {
+    width:200px;
+    position: relative;
+    margin:20px;
+    z-index: 999;
+}
+
+.menuToggle {
+    display:none;
+    z-index: 9999;
+    cursor: pointer; 
+}
+
+.shadow {
+    position:absolute;
+    width:100%;
+    height:210%;
+    top:0%;
+    margin:0px;
+    display:none;
+}
+
+.dropdownContent {
+    display: block;
+    position: absolute;
+    background: hsla(0, 3%, 13%, 0.573);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    backdrop-filter: blur(1rem);
+    z-index: 1;
+    height:0px;
+    width: 600px;
+    border-radius: 10px;
+    transition: height 0.4s;
+    margin-top:0px;
+    margin-left:-11%;
+    overflow: hidden;
+}
+
+/* For removing gap between Browse and dropdown menu */
+.dropdown {
+    padding-bottom:20px;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    pointer-events: none;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin-right:20px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.arrow {
+    padding: 15px;
+    margin-top:15px;
+    margin-left:-70px;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+    display:block;
+}
+
+.column a{
+    color:white;
+    text-decoration: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+    
+    transition: text-decoration 0.2s;
+    background-color: transparent;     
+    padding:5px;       
+    margin-bottom:10px;
+    border-radius: 5px;
+}
+
+
+.dropdownContent a:hover {
+    text-decoration: underline;
+    text-decoration-color:#FF4A39;
+    
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown:hover .dropdownContent {
+    height: 300px;
+}
+
+.dropdown:hover .column {
+    opacity: 1;
+}
+
+.dropdown:hover .options {
+    pointer-events:all;
+}
+
+
+/* =========================================================================================== */
+
+.bgImage {
+    width:96%;
+    height:500px;
+    background-image: url('../Images/screenshot21.jpg');
+    background-size: cover;
+    background-position-y: -130px;
+    border-radius: 15px;
+    position: absolute;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.imgSquare {
+    width:280px;
+    position: absolute;
+    border-radius: 15px;
+    margin-top:320px;
+    margin-left:50px;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.6);
+}
+
+.gameName {
+    font-family: Work Sans;
+    position: absolute;
+    font-size:45px;
+    font-weight: bold;
+    margin-top:525px;
+    margin-left:360px;
+    color: white;
+}
+
+
+.gradientBG {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.734);
+    width:100%;
+    height:800px;
+    top:0;
+    z-index:2;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.closeScreenshots {
+    width:30px;
+    position: fixed;
+    left:95%;
+    top:40px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index:3;
+    cursor: pointer;
+}
+
+.gameScreenshots {
+    background-image: url('../Images/screenshot21.jpg');
+    background-size: cover;
+    position: fixed;
+    width:1100px;
+    height:600px;
+    left: 50%;
+    transform: translateX(-50%);
+    top:10px;
+    z-index:100;
+    opacity: 0;
+    transition: opacity 0.5s, background-image 0.3s;
+    pointer-events: none;
+}
+
+.arrowRight {
+    position: fixed;
+    width:60px;
+    transform: rotate(270deg);
+    left: 93%; /* Adjust the left position */
+    margin-left: -30px;
+    top:55%;
+    z-index:3;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    cursor:pointer;
+}
+
+.arrowLeft {
+    position: fixed;
+    width:60px;
+    transform: rotate(90deg);
+    left:5%;
+    margin-left: 0;
+    top:55%;
+    z-index:3;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    cursor:pointer;
+}
+
+.gameplay {
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%);
+    width:1100px;
+    height:600px;
+}
+
+.screenshotGallery {
+    display: flex; 
+    position: fixed; 
+    z-index:2; 
+    top: 83.5%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index:2;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.submitButton {
+    padding: 15px 25px 15px 25px;
+    background-color: #FF4A39;
+    border-width:0px;
+    border-radius:10px;
+    font-size:20px;
+    color:white;
+    font-weight:bolder;
+    font-family: Work Sans;
+    letter-spacing: 3px;
+    z-index: 1;
+    transition: background-color 0.3s;
+    margin-top:5px;
+    cursor:pointer;
+}
+
+.buttonContainer:hover .submitButton{
+    background-color: #da3d2f;
+}
+
+.headers {
+    font-size:40px;
+    font-family: Work Sans;
+    font-weight:bold;
+    margin-left:30px;
+    background-color: #d2d2d2;
+    position: relative;
+    width:fit-content;
+    padding-right:10px;
+    z-index: 1;
+    letter-spacing: 3px;
+}
+
+hr {
+    background-color:#FF4A39;
+    height:1px;
+    border-width:0;
+    width:85%;
+    margin-top:-20px;
+    margin-left:9%;
+    position: absolute;
+    z-index:0;
+}
+
+.gameDescription {
+    padding:30px;
+    font-family: Work Sans;
+    width:50%;
+    height:fit-content;
+}
+
+.newsContainer {
+    width:380px;
+    height:300px;
+    border-radius: 15px; 
+    overflow:hidden; 
+    position: relative; 
+    cursor: pointer;
+}
+
+.newsContainerMore {
+    width:220px;
+    height:300px;
+    border-radius: 15px; 
+    overflow:hidden; 
+    position: relative; 
+    cursor: pointer;
+}
+
+.newsImage {
+    width:100%;
+    position: absolute;
+    transform-origin: center;
+    transform: scale(1);
+    transition: transform 0.5s ease-out;
+}
+
+.newsGradient {
+    position: relative;
+    width:inherit;
+    height:200px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.499124649859944) 70%, rgba(0,0,0,1) 100%);
+    transition: height 0.5s;
+}
+
+.newsSolid {
+    position: relative;
+    width:inherit;
+    height:150px;
+    background-color: black;
+}
+
+.newsContainer:hover .newsImage {
+    transform: scale(1.1);
+}
+
+.newsContainer:hover .newsGradient {
+    height:180px;
+}
+
+.newsContainerMore:hover .newsImage {
+    transform: scale(1.1);
+}
+
+.newsContainerMore:hover .newsGradient {
+    height:180px;
+}
+
+.buttons {
+    display: flex; 
+    gap:20px; 
+    position: absolute;
+    margin-top:520px;
+    margin-left:72%;
+}
+
+.gameInfo {
+    font-family: Work Sans; 
+    font-size:20px; 
+    margin-left:70px; 
+    margin-top:120px; 
+    color:white;
+}
+
+.newsCollection {
+    display: flex; 
+    gap:15px; 
+    margin-top: 30px; 
+    margin-left:30px;
+}
+
+.mainContent {
+    background-color: #d2d2d2; 
+    margin:20px; 
+    height:fit-content; 
+    position: relative; 
+    margin-top:30px; 
+    border-radius: 15px;
+}
+
+.moreNewsText {
+    text-align: center; 
+    font-family: Work Sans; 
+    color:white; 
+    position: relative; 
+    font-size: 20px; 
+    margin-top:-150px; 
+    font-weight: bold;
+}
+
+.playstationExclusives {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-evenly;
+    opacity: 1;
+    margin-top:0px;
+    transition: opacity 0.4s, margin-top 0.4s;
+    position: relative;
+    pointer-events:all;
+}
+
+
+.card {
+    background-color: #d2d2d2;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    font-family: 'Noto Sans Meroitic', sans-serif;
+    color: black;
+    position: relative;
+}
+
+.innerCard {
+    overflow: hidden;
+    width: 360px;
+    height: 180px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.innerCard img {
+    width:180px;
+    position: absolute;
+}
+
+.gameTitle {
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    font-size: 18px;
+    left: 190px;
+    top: 20px;
+    bottom: 0px;
+    transition: top 0.3s ease-out;
+    width:160px;
+
+}
+
+.gameContent {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    top:140px;
+    transition: top 0.3s ease-out;
+}
+
+.gameDes {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size:12px;
+    left:190px;
+    width:160px;
+    top:190px;
+    transition: top 0.3s ease-out;
+}
+
+.card:hover .gameTitle {
+    top: -160px;
+}
+
+.card:hover .gameContent {
+    top: -90px;
+}
+
+.card:hover .gameDes {
+    top: 20px;
+}
+
+
+.borderAnim {
+    border-color: #FF4A39;
+    border-width: 0px;
+    border-style: solid;
+    position: absolute;
+    width: 361px;
+    height: 182px;
+    top:-3px;
+    left:-3px;
+    border-radius: 15px;
+    opacity:0;
+    transform-origin: center;
+    transform: scale(1);
+    transition: border-width 0.2s, opacity 0.2s, transform 0.4s;
+
+}
+
+.borderAnim:hover {
+    border-width: 3px;
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+
+@media (min-width: 1041px) and (max-width: 1216px) {
+    nav ul li {
+        margin-inline: 15px;
+    }
+    .navigation {
+        padding-left:15%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1040px) {
+    .navigation {
+        padding-right:0px;
+        padding-top:120px;
+        position: fixed;
+        inset:0 0 0 55%;
+        margin:0px;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        padding-left:0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation[data-visible = "true"]{
+        transform: translateX(0%);
+    }
+
+    nav ul li{
+        padding-top:20px;
+        display:block;
+        
+    }
+
+    .menuToggle {
+        position: absolute;
+        left:90%;
+        top:3%;
+        background-color: transparent;
+        background-image: url(../Images/menuToggle.png);
+        background-size:cover;
+        width:30px;
+        height:30px;
+        border:0;
+        display:block;
+    }
+
+    .menuToggle[menuIcon = "true"] {
+        background-image: url(../Images/closeMenu.png);
+    }
+
+    .shadow[shadowToggle = "true"] {
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .dropdown:hover .dropdownContent {display: block;}
+
+    .arrow {
+        display: none;
+    }
+
+}
+ /* =============================================================== */
+@media (max-width: 599px) {
+
+    .navigation {
+        padding-right:0px;
+        padding-top:120px;
+        position: fixed;
+        inset:0 0 0 55%;
+        margin:0px;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        padding-left:0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation[data-visible = "true"]{
+        transform: translateX(0%);
+    }
+
+    nav ul li{
+        padding-top:20px;
+        display:block;
+        
+    }
+
+    .menuToggle {
+        position: fixed;
+        left:85%;
+        top:35px;
+        background-color: transparent;
+        background-image: url(../Images/menuToggle.png);
+        background-size:cover;
+        width:30px;
+        height:30px;
+        border:0;
+        display:block;
+    }
+
+    .menuToggle[menuIcon = "true"] {
+        background-image: url(../Images/closeMenu.png);
+    }
+
+    .shadow[shadowToggle = "true"] {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.512);
+    }
+
+    .dropdown:hover .dropdownContent {display: block;}
+
+    .arrow {
+        display: none;
+    }
+
+    .logo {
+        width:150px;
+    }
+
+    .dropdown:hover .column {
+        opacity: 0;
+    }
+
+    .dropdown:hover .options {
+        pointer-events:none;
+    }
+
+    .dropdown:hover .dropdownContent {
+        height: 0px;
+    }
+
+    .arrow {
+        display:none;
+    }
+
+    .bgImage {
+        height:150px;
+        background-position-y: -20px;
+    }
+
+    .imgSquare {
+        width:120px;
+        margin-top:80px;
+        margin-left:30px;
+    }
+
+    .gameName {
+        font-size:20px;
+        margin-top:160px;
+        margin-left:160px;
+    }
+
+    .submitButton {
+        padding: 10px 15px 10px 15px;
+        border-radius:10px;
+        font-size:12px;
+        color:white;
+        font-weight:bolder;
+        font-family: Work Sans;
+        letter-spacing: 3px;
+        z-index: 1;
+        transition: background-color 0.3s;
+        margin-top:5px;
+        cursor:pointer;
+    }
+
+
+    .buttons {
+        gap:10px; 
+        margin-top:215px;
+        margin-left:30%;
+        right:10px;
+    }
+
+
+
+    .closeScreenshots {
+        width:20px;
+        position: fixed;
+        left:90%;
+        top:20%;
+        opacity: 0;
+        transition: opacity 0.5s;
+        pointer-events: none;
+        z-index:3;
+        cursor: pointer;
+    }
+    
+    .gameScreenshots {
+        width:300px;
+        height:180px;
+        left: 50%;
+        transform: translateX(-50%);
+        top:35%;
+        z-index:3;
+        opacity: 0;
+        transition: opacity 0.5s, background-image 0.3s;
+        pointer-events: none;
+    }
+    
+    .arrowRight {
+        width:30px;
+        left: 99%;
+        margin-left: -30px;
+        top:48%;
+    }
+    
+    .arrowLeft {
+        width:30px;
+        left:1%;
+        margin-left: 0;
+        top:48%;
+    }
+
+    .screenshotGallery { 
+        top: 65%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        z-index:2;
+        opacity: 0;
+        transition: opacity 0.5s;
+        pointer-events: none;
+    }
+
+    .screenshotGallery * {
+        width:80px;
+    }
+
+    .gameInfo {
+        font-size:12px; 
+        margin-left:20px; 
+        margin-top:-230px; 
+    }
+
+    .newsCollection {
+        flex-direction: column;
+    }
+
+    .newsContainer {
+        width:320px;
+        height:300px;
+        border-radius: 15px; 
+        overflow:hidden; 
+        position: relative; 
+        cursor: pointer;
+        left:50%;
+        transform: translateX(-55%);
+    }
+
+    .newsGradient {
+        height:180px;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.499124649859944) 70%, rgba(0,0,0,1) 100%);
+        transition: height 0.5s;
+    }
+    
+    .newsSolid {
+        position: relative;
+        width:inherit;
+        height:180px;
+        background-color: black;
+    }
+
+    .newsContainer:hover .newsGradient {
+        height:140px;
+    }
+
+    .headers {
+        font-size:30px;
+        margin-left:10px;
+        padding-right:10px;
+        letter-spacing: 3px;
+    }
+
+    .mainContent {
+        margin:20px; 
+        margin-top:-170px; 
+    }
+
+    .gameplay {
+        width:95%;
+        height:200px;
+    }
+    
+    .newsContainerMore {
+        width:320px;
+        height:200px;
+        border-radius: 15px; 
+        overflow:hidden; 
+        position: relative; 
+        cursor: pointer;
+        left:50%;
+        transform: translateX(-55%);
+    }
+
+    .newsContainerMore:hover .newsGradient {
+        height:100px;
+    }
+
+    .newsContainerMore .newsGradient {
+        height:120px;
+    }
+}

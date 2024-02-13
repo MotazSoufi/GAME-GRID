@@ -1,0 +1,54 @@
+<a href="/">
+    <img class="logo" src="Images/logo2.png">
+</a>
+
+<nav>
+    <ul class="navigation" id="navigationBar" data-visible="false" style="margin-left: -50px;">
+        
+
+            <li><a href="/browse" class="underline">BROWSE</a></li>
+            <span class="dropdown">
+                <img src="Images/arrow.png" width="18" class="arrow">
+                <div class="dropdownContent">
+                    <div class="options">
+                        <div class="column">
+                            <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Platform</h6>
+                            <a href="#">PlayStation</a>
+                            <a href="#">Xbox</a>
+                            <a href="#">Nintendo</a>
+                        </div>
+                    
+                        <div class="column">
+                            <h6 style="font-size:18px; color:#FF4A39; padding-left: 5px;">Genre</h6>
+                            <a href="#">Action</a>
+                            <a href="#">RPG</a>
+                            <a href="#">Puzzle</a>
+                        </div>
+                    </div>
+                </div>
+            </span>
+
+        </li>
+        <li><a href="feed.html" class="underline">FEED</a></li>
+        <li><a href="/lists" class="underline">MY LISTS</a></li>
+        <li><a href="/lists" class="underline">SEARCH</a></li>
+    </ul>
+    <% if(locals.nickname) {%>
+        <div style="position: absolute; left:90%; top:30px;">
+            <div class="profileIMG">
+                <img src="Images/cloudstrife.png" width="80" >
+            </div>
+            <div class="profileDropdown">
+                <div class="profileDropdownText">
+                    <a href="/profile">View Profile</a> <br>
+                    <a href="#">Edit Profile</a> <br> 
+                    <a href="/logout"><strong style="color:#FF4A39; font-weight:bold;">Log out</strong></a>
+                </div>
+            </div>
+        </div>
+    <% } else {%>
+        <a href="/login"><div class="signInButton">SIGN IN</div></a>
+    <% } %>
+</nav>
+
+<button onclick="toggleMenu()" class="menuToggle" id="menuToggle" menuIcon="false"></button>

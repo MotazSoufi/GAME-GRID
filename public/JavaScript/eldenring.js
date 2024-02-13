@@ -6,6 +6,31 @@ var count = 1;
                 }
             });
 
+            $('.profileIMG').click(() => {
+                if($('.profileDropdown').css("opacity") == 0) {
+                    $('.profileDropdown').css("opacity", 1);
+                    $('.profileDropdown').css("height", "110px");
+                } else {
+                    $('.profileDropdown').css("opacity", 0);
+                    $('.profileDropdown').css("height", "0px");
+                }
+            });
+            
+            $(document).click(() => {
+                if($('.profileDropdown').css("opacity") == 1) {
+                    $('.profileDropdown').css("opacity", 0);
+                    $('.profileDropdown').css("height", "0px");
+                }
+            });
+
+            $('#wishlist').click(() => {
+                if($('#wishlist').attr("value") == "WISHLIST") {
+                    $('#wishlist').attr("value", "     ✓     ");
+                } else {
+                    $('#wishlist').attr("value", "WISHLIST");
+                }
+                
+            });
 
             function enlargeScreenshots() {
                 $('.gradientBG').css("opacity", "1");

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Elden Ring</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="/Images/logo.png" type="image/png">
+        <link rel="stylesheet" href="/CSS/batman.css" type="text/css">
+
+    </head>
+
+    <body>
+
+        
+        <%- include("partials/header.ejs")%>
+
+        <!-- ============================================================================ -->
+
+        
+        
+        <div class="gradientBG"></div>
+        <div style="height:500px; width:100%; position: relative;">
+            <div class="bgImage" onclick="enlargeScreenshots()"></div>
+            <img src="/Images/batmanSQUARE.jpg" class="imgSquare">
+            <div class="gameName"> Batman Arkham Knight </div>
+
+            <div class="buttons">
+                <% if (locals.wishlisted) { %>
+                    <div class="buttonContainer" onclick="buttonAnimation()">
+                        <a href="/wishlist/batman"><input type="submit" value="     ✓     " class="submitButton" id="wishlist"></a>
+                    </div>
+                <% } else { %>
+                    <div class="buttonContainer" onclick="buttonAnimation()">
+                        <a href="/wishlist/batman"><input type="submit" value="WISHLIST" class="submitButton" id="wishlist"></a>
+                    </div>
+                <% } %>
+        
+                <div class="buttonContainer" onclick="buttonAnimation()">
+                    <input type="submit" value="ADD TO LIST" class="submitButton">
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+        <img src="/Images/closeMenu.png" class="closeScreenshots" onclick="closeSc()">
+
+        <div class="gameScreenshots"></div>
+        <img src="/Images/arrow.png" class="arrowRight" onclick="goRight()">
+        <img src="/Images/arrow.png" class="arrowLeft" onclick="goLeft()">
+
+        <div class="screenshotGallery">
+            <img src="/Images/screenshot21.jpg" width="200">
+            <img src="/Images/screenshot22.jpg" width="200">
+            <img src="/Images/screenshot23.jpg" width="200">
+            <img src="/Images/screenshot24.jpg" width="200">
+        </div>
+
+
+         
+        <div style="display: flex;">
+            <div class="gameInfo">
+                <strong>Release date</strong>
+                <br>
+                June 23, 2015
+            </div>
+
+            <div class="gameInfo">
+                <strong>Genre</strong>
+                <br>
+                Action-Adventure
+            </div>
+
+            <div class="gameInfo">
+                <strong>Developer</strong>
+                <br>
+                Rocksteady Studios
+            </div>
+
+            <div class="gameInfo">
+                <strong>Platforms</strong>
+                <br>
+                PS4, Xbox One, Windows
+            </div>
+        </div>
+        
+        <div class="mainContent">
+            
+            <div style="margin-top:40px;">
+                <div class="headers" style="padding-top:30px;">NEWS</div>
+                <hr>
+                
+                <div class="newsCollection">
+                    <div class="newsContainer">
+                        <img src="/Images/news1.jpg" class="newsImage">
+                        <div class="newsGradient"></div>
+                        <div class="newsSolid"></div>
+                        <div style="font-family: Work Sans; color:white; position: absolute; font-size: 20px; margin-top:-150px; margin-left:8px; font-weight: bold;">
+                            First Elden Ring DLC Announced
+                        </div>
+                        <p style="font-family: Work Sans; color:#d2d2d2; position: absolute; font-size: 14px; margin-top:-100px; margin-left:8px; width:96%;">
+                            Take a first look at the first released screenshot of the upcoming DLC...
+                        </p>
+                        <p style="font-family: Work Sans; color:#FF4A39; font-size: 14px; margin-left:72%; margin-top: -53px; position: absolute;">
+                            Learn more..
+                        </p>
+                    </div>
+
+                    <div class="newsContainer">
+                        <img src="/Images/news2.png" class="newsImage">
+                        <div class="newsGradient"></div>
+                        <div class="newsSolid"></div>
+                        <div style="font-family: Work Sans; color:white; position: absolute; font-size: 20px; margin-top:-150px; margin-left:8px; font-weight: bold;">
+                            Elden Ring Patch Notes 1.08
+                        </div>
+                        <p style="font-family: Work Sans; color:#d2d2d2; position: absolute; font-size: 14px; margin-top:-100px; margin-left:8px; width:96%;">
+                            Here are all the updated bug fixes in the new patch...
+                        </p>
+                        <p style="font-family: Work Sans; color:#FF4A39; font-size: 14px; margin-left:72%; margin-top: -53px; position: absolute;">
+                            Learn more..
+                        </p>
+                    </div>
+
+                    <div class="newsContainer">
+                        <img src="/Images/news3.jpg" class="newsImage">
+                        <div class="newsGradient"></div>
+                        <div class="newsSolid"></div>
+                        <div style="font-family: Work Sans; color:white; position: absolute; font-size: 20px; margin-top:-150px; margin-left:8px; font-weight: bold;">
+                            Elden Ring Colosseum Guide
+                        </div>
+                        <p style="font-family: Work Sans; color:#d2d2d2; position: absolute; font-size: 14px; margin-top:-100px; margin-left:8px; width:96%;">
+                            Learn the tips and tricks to be the ultimate tarnished...
+                        </p>
+                        <p style="font-family: Work Sans; color:#FF4A39; font-size: 14px; margin-left:72%; margin-top: -53px; position: absolute;">
+                            Learn more..
+                        </p>
+                    </div>
+
+                    <div class="newsContainerMore">
+                        <img src="/Images/eldenringSQUARE.webp" class="newsImage">
+                        <div class="newsGradient"></div>
+                        <div class="newsSolid"></div>
+                        <div class="moreNewsText">
+                            More news
+                        </div> 
+                    </div>
+
+                </div>
+            </div>
+        
+
+            
+            <div style="margin-top:30px; margin-bottom: 30px;">
+                <div class="headers">GAMEPLAY</div>
+                <hr>
+            </div>
+            <iframe class="gameplay" src="https://www.youtube.com/embed/JldMvQMO_5U?si=H_2SRqAu1ZOXqpbL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+            <div>
+                <div class="headers" style="margin-top:30px;">DESCRIPTION</div>
+                <hr>
+                <div class="gameDescription">
+                    Elden Ring is a 2022 action role-playing game developed by FromSoftware.
+                    It was directed by Hidetaka Miyazaki with worldbuilding provided by fantasy
+                    writer George R. R. Martin. It was released for PlayStation 4, PlayStation 5,
+                    Windows, Xbox One, and Xbox Series X/S on February 25 by FromSoftware in
+                    Japan and Bandai Namco Entertainment internationally. Players control a
+                    customizable player character who is on a quest to repair the Elden Ring
+                    and become the new Elden Lord.
+                    <br>
+                    <br>
+                    Elden Ring is presented through a third-person perspective; players freely 
+                    roam its interactive open world. The six main areas are traversed using 
+                    the player character's steed Torrent as the primary mode of travel. Linear, 
+                    hidden dungeons can be explored to find useful items. Players can use several 
+                    types of weapons and magic spells, including non-direct engagement enabled by 
+                    stealth mechanics. Throughout the game's world, checkpoints enable fast travel 
+                    and allow players to improve their attributes using an in-game currency called 
+                    Runes. Elden Ring has an online multiplayer mode in which players can join each 
+                    other for cooperative and player-versus-player combat.
+                </div>
+            </div>
+        
+            <div>
+                <div class="headers" style="margin-top:30px;">SOUNDTRACK</div>
+                <hr>
+                
+                <iframe style="border-radius:12px; margin-left:25%; margin-top:30px;" src="https://open.spotify.com/embed/album/2gCFzRRO5acruR4y4QhIuI?utm_source=generator" width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+        </div>
+
+        
+        <div style="color:white; font-size:45px; font-family:Font1; margin-left:20px; margin-bottom:10px;">
+            SIMILAR GAMES
+        </div> 
+
+        <div class="playstationExclusives">
+            <div class="card">
+                <div class="innerCard">
+                    <img src="Images/p5.png">
+                    <div class="contentContainer">
+                        <div class="gameTitle">Horizon: Forbidden West</div>
+                        <div class="gameContent">
+                            <strong>Genre:</strong><br>
+                            RPG, Action
+                        </div>
+        
+                        
+                        <div class="gameDes">
+                            <strong>Release Date: </strong> <br>
+                            February 18, 2022
+                            <br>
+                            <br>
+                            <strong>Platforms: </strong> <br>
+                            PS5, PS4
+                            <br>
+                            <br>
+                            <strong>Developer: </strong> <br>
+                            Guerrilla Games
+                        </div>           
+                    </div>
+                </div>
+                <div class="borderAnim"></div>
+            </div>
+    
+            <div class="card">
+                <div class="innerCard">
+                    <img src="Images/spidermanSQUARE.jpg">
+                    
+                    <div class="contentContainer">
+        
+                        <div class="gameTitle">Spider-man 2</div>
+                        <div class="gameContent">
+                            <strong>Genre:</strong><br>
+                            Action, Adventure
+                        </div>
+        
+                        
+                        <div class="gameDes">
+                            <strong>Release Date: </strong> <br>
+                            October 20, 2023
+                            <br>
+                            <br>
+                            <strong>Platforms: </strong> <br>
+                            PS5
+                            <br>
+                            <br>
+                            <strong>Developer: </strong> <br>
+                            Insomniac Games
+                        </div>           
+                    </div>
+                </div>
+                <div class="borderAnim"></div>
+            </div>
+
+            <div class="card">
+                <div class="innerCard">
+                    <img src="Images/p9.jpg">
+                    
+                    <div class="contentContainer">
+        
+                        <div class="gameTitle">Sackboy: A Big Adventure</div>
+                        <div class="gameContent">
+                            <strong>Genre:</strong><br>
+                            Platformer
+                        </div>
+        
+                        
+                        <div class="gameDes">
+                            <strong>Release Date: </strong> <br>
+                            19 November 2020
+                            <br>
+                            <br>
+                            <strong>Platforms: </strong> <br>
+                            PS5, PS4
+                            <br>
+                            <br>
+                            <strong>Developer: </strong> <br>
+                            Sumo Digital
+                        </div>           
+                    </div>
+                </div>
+                <div class="borderAnim"></div>
+            </div>
+
+            <div class="card">
+                <div class="innerCard">
+                    <img src="Images/p7.webp">
+                    <div class="contentContainer">
+                        <div class="gameTitle">Ratchet & Clank Rift Apart</div>
+                        <div class="gameContent">
+                            <strong>Genre:</strong><br>
+                            Platform, Shooter
+                        </div>
+        
+                        
+                        <div class="gameDes">
+                            <strong>Release Date: </strong> <br>
+                            June 11, 2021
+                            <br>
+                            <br>
+                            <strong>Platforms: </strong> <br>
+                            PS5
+                            <br>
+                            <br>
+                            <strong>Developer: </strong> <br>
+                            Insomniac Games
+                        </div>           
+                    </div>
+                </div>
+                <div class="borderAnim"></div>
+            </div>     
+        </div>
+    
+
+        <table class="shadow" shadowToggle="false"></table>
+        
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="JavaScript/batman.js"></script>
+    </body>
+</html>
